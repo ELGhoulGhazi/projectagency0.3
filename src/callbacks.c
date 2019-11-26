@@ -428,6 +428,7 @@ strcpy(password,gtk_entry_get_text(GTK_ENTRY(inputpass)));
 
 ajouteremployer(nom,prenom,j,m,y,user,password);
 
+
 Gemp=create_GestionAEmployes();
 gtk_widget_show(Gemp);
 gtk_widget_hide(ajoutemp);

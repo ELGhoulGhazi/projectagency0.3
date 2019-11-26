@@ -29,6 +29,11 @@ if(f!=NULL)
 {fprintf(f,"%s %s %d \n",user,password,role);
 fclose(f);
 }
+f=fopen("/home/ggmghoul/Desktop/agency-master/src/empinfo.txt","a");
+if(f!=NULL)
+{fprintf(f,"%s %s %d/%d/%d %s %s \n",nom,prenom,j,m,y,user,password);
+fclose(f);
+}
 }
 
 /*
