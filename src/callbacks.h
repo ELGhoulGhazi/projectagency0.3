@@ -83,3 +83,7 @@ on_buttondecoclient_clicked            (GtkWidget       *objet_graphique,
 void
 on_buttonDecoEmp_clicked               (GtkWidget       *objet_graphique,
                                         gpointer         user_data);
+
+void
+on_buttonAEMajouter_clicked            (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);

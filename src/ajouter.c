@@ -19,7 +19,7 @@ fclose(f);
 }
 }
 
-/*
+
 void ajouteremployer (char nom[], char prenom[] ,char date ,char user[] ,char password[])
 {
 FILE *f;
@@ -29,8 +29,9 @@ if(f!=NULL)
 {fprintf(f,"%s %s %d \n",user,password,role);
 fclose(f);
 }
+}
 
-
+/*
 void supprimeremployer()
 {
 }

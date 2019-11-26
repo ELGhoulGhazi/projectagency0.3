@@ -362,3 +362,17 @@ gtk_widget_show(Home);
 gtk_widget_hide(Client);
 }
 
+
+void
+on_buttonAEMajouter_clicked            (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *ajoutemp ,*Gemp;
+
+Gemp=lookup_widget(objet_graphique,"GestionAEmployes");
+ajoutemp=create_ajouteremp();
+gtk_widget_show(ajoutemp);
+gtk_widget_hide(Gemp);
+
+}
+
