@@ -81,12 +81,15 @@ void
 on_buttonAGE_clicked                   (GtkWidget       *objet_graphique,
                                         gpointer         user_data)
 {
-GtkWidget *Admin ,*GEmp;
+GtkWidget *Admin ,*GEmp,*treeview ; 
 
 Admin=lookup_widget(objet_graphique,"ModeAdmin");
 GEmp=create_GestionAEmployes(); 
 gtk_widget_show(GEmp);
-gtk_widget_hide(Admin);
+gtk_widget_hide(Admin); 
+
+treeview=lookup_widget(GEmp,"treeviewemp");
+afficheremp(treeview) ; 
 }
 
 

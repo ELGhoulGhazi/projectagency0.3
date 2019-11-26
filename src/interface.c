@@ -592,7 +592,7 @@ create_GestionAEmployes (void)
   GtkWidget *hbox4;
   GtkWidget *image6;
   GtkWidget *label33;
-  GtkWidget *treeview1;
+  GtkWidget *treeviewemp;
   GtkWidget *buttonAEMajouter;
   GtkWidget *alignment5;
   GtkWidget *hbox5;
@@ -662,10 +662,10 @@ create_GestionAEmployes (void)
   gtk_widget_show (label33);
   gtk_box_pack_start (GTK_BOX (hbox4), label33, FALSE, FALSE, 0);
 
-  treeview1 = gtk_tree_view_new ();
-  gtk_widget_show (treeview1);
-  gtk_fixed_put (GTK_FIXED (fixed5), treeview1, 32, 72);
-  gtk_widget_set_size_request (treeview1, 600, 224);
+  treeviewemp = gtk_tree_view_new ();
+  gtk_widget_show (treeviewemp);
+  gtk_fixed_put (GTK_FIXED (fixed5), treeviewemp, 32, 72);
+  gtk_widget_set_size_request (treeviewemp, 600, 224);
 
   buttonAEMajouter = gtk_button_new ();
   gtk_widget_show (buttonAEMajouter);
@@ -719,7 +719,7 @@ create_GestionAEmployes (void)
   GLADE_HOOKUP_OBJECT (GestionAEmployes, hbox4, "hbox4");
   GLADE_HOOKUP_OBJECT (GestionAEmployes, image6, "image6");
   GLADE_HOOKUP_OBJECT (GestionAEmployes, label33, "label33");
-  GLADE_HOOKUP_OBJECT (GestionAEmployes, treeview1, "treeview1");
+  GLADE_HOOKUP_OBJECT (GestionAEmployes, treeviewemp, "treeviewemp");
   GLADE_HOOKUP_OBJECT (GestionAEmployes, buttonAEMajouter, "buttonAEMajouter");
   GLADE_HOOKUP_OBJECT (GestionAEmployes, alignment5, "alignment5");
   GLADE_HOOKUP_OBJECT (GestionAEmployes, hbox5, "hbox5");
