@@ -33,10 +33,11 @@ create_Home (void)
   GtkWidget *Fixed;
   GtkWidget *ggenetryUser;
   GtkWidget *ggentryPass;
-  GtkWidget *ggbuttonVisiteur;
-  GtkWidget *ggbuttonIinscription;
   GtkWidget *labelwrong;
+  GtkWidget *image18;
   GtkWidget *ggbuttonLogin;
+  GtkWidget *ggbuttonIinscription;
+  GtkWidget *ggbuttonVisiteur;
 
   Home = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (Home), _("Home"));
@@ -47,45 +48,50 @@ create_Home (void)
 
   ggenetryUser = gtk_entry_new ();
   gtk_widget_show (ggenetryUser);
-  gtk_fixed_put (GTK_FIXED (Fixed), ggenetryUser, 248, 136);
-  gtk_widget_set_size_request (ggenetryUser, 172, 34);
+  gtk_fixed_put (GTK_FIXED (Fixed), ggenetryUser, 464, 272);
+  gtk_widget_set_size_request (ggenetryUser, 224, 42);
   gtk_entry_set_invisible_char (GTK_ENTRY (ggenetryUser), 8226);
 
   ggentryPass = gtk_entry_new ();
   gtk_widget_show (ggentryPass);
-  gtk_fixed_put (GTK_FIXED (Fixed), ggentryPass, 248, 176);
-  gtk_widget_set_size_request (ggentryPass, 172, 34);
+  gtk_fixed_put (GTK_FIXED (Fixed), ggentryPass, 464, 432);
+  gtk_widget_set_size_request (ggentryPass, 224, 40);
   gtk_entry_set_visibility (GTK_ENTRY (ggentryPass), FALSE);
   gtk_entry_set_invisible_char (GTK_ENTRY (ggentryPass), 8226);
-
-  ggbuttonVisiteur = gtk_button_new_with_mnemonic (_("Mode Visiteur"));
-  gtk_widget_show (ggbuttonVisiteur);
-  gtk_fixed_put (GTK_FIXED (Fixed), ggbuttonVisiteur, 80, 368);
-  gtk_widget_set_size_request (ggbuttonVisiteur, 136, 41);
-
-  ggbuttonIinscription = gtk_button_new_with_mnemonic (_("Inscrivez-Vous"));
-  gtk_widget_show (ggbuttonIinscription);
-  gtk_fixed_put (GTK_FIXED (Fixed), ggbuttonIinscription, 264, 368);
-  gtk_widget_set_size_request (ggbuttonIinscription, 136, 41);
 
   labelwrong = gtk_label_new ("");
   gtk_widget_show (labelwrong);
   gtk_fixed_put (GTK_FIXED (Fixed), labelwrong, 144, 32);
   gtk_widget_set_size_request (labelwrong, 328, 56);
 
+  image18 = create_pixmap (Home, "WELCOME.jpg");
+  gtk_widget_show (image18);
+  gtk_fixed_put (GTK_FIXED (Fixed), image18, 0, 0);
+  gtk_widget_set_size_request (image18, 1000, 712);
+
   ggbuttonLogin = gtk_button_new_with_mnemonic (_("Login"));
   gtk_widget_show (ggbuttonLogin);
-  gtk_fixed_put (GTK_FIXED (Fixed), ggbuttonLogin, 464, 368);
-  gtk_widget_set_size_request (ggbuttonLogin, 136, 41);
+  gtk_fixed_put (GTK_FIXED (Fixed), ggbuttonLogin, 768, 616);
+  gtk_widget_set_size_request (ggbuttonLogin, 144, 49);
 
-  g_signal_connect ((gpointer) ggbuttonVisiteur, "clicked",
-                    G_CALLBACK (on_ggbuttonVisiteur_clicked),
+  ggbuttonIinscription = gtk_button_new_with_mnemonic (_("Inscrivez-Vous"));
+  gtk_widget_show (ggbuttonIinscription);
+  gtk_fixed_put (GTK_FIXED (Fixed), ggbuttonIinscription, 432, 616);
+  gtk_widget_set_size_request (ggbuttonIinscription, 144, 49);
+
+  ggbuttonVisiteur = gtk_button_new_with_mnemonic (_("Mode Visiteur"));
+  gtk_widget_show (ggbuttonVisiteur);
+  gtk_fixed_put (GTK_FIXED (Fixed), ggbuttonVisiteur, 104, 616);
+  gtk_widget_set_size_request (ggbuttonVisiteur, 144, 49);
+
+  g_signal_connect ((gpointer) ggbuttonLogin, "clicked",
+                    G_CALLBACK (on_ggbuttonLogin_clicked),
                     NULL);
   g_signal_connect ((gpointer) ggbuttonIinscription, "clicked",
                     G_CALLBACK (on_ggbuttonIinscription_clicked),
                     NULL);
-  g_signal_connect ((gpointer) ggbuttonLogin, "clicked",
-                    G_CALLBACK (on_ggbuttonLogin_clicked),
+  g_signal_connect ((gpointer) ggbuttonVisiteur, "clicked",
+                    G_CALLBACK (on_ggbuttonVisiteur_clicked),
                     NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
@@ -93,10 +99,11 @@ create_Home (void)
   GLADE_HOOKUP_OBJECT (Home, Fixed, "Fixed");
   GLADE_HOOKUP_OBJECT (Home, ggenetryUser, "ggenetryUser");
   GLADE_HOOKUP_OBJECT (Home, ggentryPass, "ggentryPass");
-  GLADE_HOOKUP_OBJECT (Home, ggbuttonVisiteur, "ggbuttonVisiteur");
-  GLADE_HOOKUP_OBJECT (Home, ggbuttonIinscription, "ggbuttonIinscription");
   GLADE_HOOKUP_OBJECT (Home, labelwrong, "labelwrong");
+  GLADE_HOOKUP_OBJECT (Home, image18, "image18");
   GLADE_HOOKUP_OBJECT (Home, ggbuttonLogin, "ggbuttonLogin");
+  GLADE_HOOKUP_OBJECT (Home, ggbuttonIinscription, "ggbuttonIinscription");
+  GLADE_HOOKUP_OBJECT (Home, ggbuttonVisiteur, "ggbuttonVisiteur");
 
   return Home;
 }
