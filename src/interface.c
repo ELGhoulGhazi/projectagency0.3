@@ -168,13 +168,13 @@ create_ModeAdmin (void)
 {
   GtkWidget *ModeAdmin;
   GtkWidget *fixed3;
+  GtkWidget *image19;
   GtkWidget *label3;
-  GtkWidget *buttonAC;
-  GtkWidget *button15;
+  GtkWidget *buttonDecoA;
   GtkWidget *buttonAGC;
   GtkWidget *buttonAGE;
   GtkWidget *button14;
-  GtkWidget *buttonDecoA;
+  GtkWidget *button15;
 
   ModeAdmin = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (ModeAdmin), _("Mode Administrateur"));
@@ -183,61 +183,61 @@ create_ModeAdmin (void)
   gtk_widget_show (fixed3);
   gtk_container_add (GTK_CONTAINER (ModeAdmin), fixed3);
 
+  image19 = create_pixmap (ModeAdmin, "admin.jpg");
+  gtk_widget_show (image19);
+  gtk_fixed_put (GTK_FIXED (fixed3), image19, 0, 0);
+  gtk_widget_set_size_request (image19, 1080, 808);
+
   label3 = gtk_label_new (_("Bonjour Admin , "));
   gtk_widget_show (label3);
-  gtk_fixed_put (GTK_FIXED (fixed3), label3, 0, 0);
+  gtk_fixed_put (GTK_FIXED (fixed3), label3, 352, 128);
   gtk_widget_set_size_request (label3, 176, 56);
-
-  buttonAC = gtk_button_new_with_mnemonic (_("G.Clients"));
-  gtk_widget_show (buttonAC);
-  gtk_fixed_put (GTK_FIXED (fixed3), buttonAC, 104, 296);
-  gtk_widget_set_size_request (buttonAC, 120, 41);
-
-  button15 = gtk_button_new_with_mnemonic ("");
-  gtk_widget_show (button15);
-  gtk_fixed_put (GTK_FIXED (fixed3), button15, 576, 432);
-  gtk_widget_set_size_request (button15, 56, 49);
-
-  buttonAGC = gtk_button_new_with_mnemonic (_("G.Clients"));
-  gtk_widget_show (buttonAGC);
-  gtk_fixed_put (GTK_FIXED (fixed3), buttonAGC, 104, 296);
-  gtk_widget_set_size_request (buttonAGC, 120, 41);
-
-  buttonAGE = gtk_button_new_with_mnemonic (_("G.Employ\303\251s"));
-  gtk_widget_show (buttonAGE);
-  gtk_fixed_put (GTK_FIXED (fixed3), buttonAGE, 424, 296);
-  gtk_widget_set_size_request (buttonAGE, 120, 41);
-
-  button14 = gtk_button_new_with_mnemonic ("");
-  gtk_widget_show (button14);
-  gtk_fixed_put (GTK_FIXED (fixed3), button14, 512, 432);
-  gtk_widget_set_size_request (button14, 56, 49);
 
   buttonDecoA = gtk_button_new_with_mnemonic (_("Se d\303\251conecter"));
   gtk_widget_show (buttonDecoA);
-  gtk_fixed_put (GTK_FIXED (fixed3), buttonDecoA, 16, 464);
-  gtk_widget_set_size_request (buttonDecoA, 176, 41);
+  gtk_fixed_put (GTK_FIXED (fixed3), buttonDecoA, 0, 756);
+  gtk_widget_set_size_request (buttonDecoA, 196, 51);
 
+  buttonAGC = gtk_button_new_with_mnemonic (_("G.Clients"));
+  gtk_widget_show (buttonAGC);
+  gtk_fixed_put (GTK_FIXED (fixed3), buttonAGC, 88, 600);
+  gtk_widget_set_size_request (buttonAGC, 144, 49);
+
+  buttonAGE = gtk_button_new_with_mnemonic (_("G.Employ\303\251s"));
+  gtk_widget_show (buttonAGE);
+  gtk_fixed_put (GTK_FIXED (fixed3), buttonAGE, 328, 600);
+  gtk_widget_set_size_request (buttonAGE, 144, 49);
+
+  button14 = gtk_button_new_with_mnemonic ("");
+  gtk_widget_show (button14);
+  gtk_fixed_put (GTK_FIXED (fixed3), button14, 600, 600);
+  gtk_widget_set_size_request (button14, 144, 49);
+
+  button15 = gtk_button_new_with_mnemonic ("");
+  gtk_widget_show (button15);
+  gtk_fixed_put (GTK_FIXED (fixed3), button15, 840, 600);
+  gtk_widget_set_size_request (button15, 144, 49);
+
+  g_signal_connect ((gpointer) buttonDecoA, "clicked",
+                    G_CALLBACK (on_buttonDecoA_clicked),
+                    NULL);
   g_signal_connect ((gpointer) buttonAGC, "clicked",
                     G_CALLBACK (on_buttonAGC_clicked),
                     NULL);
   g_signal_connect ((gpointer) buttonAGE, "clicked",
                     G_CALLBACK (on_buttonAGE_clicked),
                     NULL);
-  g_signal_connect ((gpointer) buttonDecoA, "clicked",
-                    G_CALLBACK (on_buttonDecoA_clicked),
-                    NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
   GLADE_HOOKUP_OBJECT_NO_REF (ModeAdmin, ModeAdmin, "ModeAdmin");
   GLADE_HOOKUP_OBJECT (ModeAdmin, fixed3, "fixed3");
+  GLADE_HOOKUP_OBJECT (ModeAdmin, image19, "image19");
   GLADE_HOOKUP_OBJECT (ModeAdmin, label3, "label3");
-  GLADE_HOOKUP_OBJECT (ModeAdmin, buttonAC, "buttonAC");
-  GLADE_HOOKUP_OBJECT (ModeAdmin, button15, "button15");
+  GLADE_HOOKUP_OBJECT (ModeAdmin, buttonDecoA, "buttonDecoA");
   GLADE_HOOKUP_OBJECT (ModeAdmin, buttonAGC, "buttonAGC");
   GLADE_HOOKUP_OBJECT (ModeAdmin, buttonAGE, "buttonAGE");
   GLADE_HOOKUP_OBJECT (ModeAdmin, button14, "button14");
-  GLADE_HOOKUP_OBJECT (ModeAdmin, buttonDecoA, "buttonDecoA");
+  GLADE_HOOKUP_OBJECT (ModeAdmin, button15, "button15");
 
   return ModeAdmin;
 }
