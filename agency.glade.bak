@@ -358,24 +358,6 @@
       </child>
 
       <child>
-	<widget class="GtkButton" id="buttonAGC">
-	  <property name="width_request">144</property>
-	  <property name="height_request">49</property>
-	  <property name="visible">True</property>
-	  <property name="can_focus">True</property>
-	  <property name="label" translatable="yes">G.Clients</property>
-	  <property name="use_underline">True</property>
-	  <property name="relief">GTK_RELIEF_NORMAL</property>
-	  <property name="focus_on_click">True</property>
-	  <signal name="clicked" handler="on_buttonAGC_clicked" last_modification_time="Wed, 20 Nov 2019 19:36:15 GMT"/>
-	</widget>
-	<packing>
-	  <property name="x">88</property>
-	  <property name="y">600</property>
-	</packing>
-      </child>
-
-      <child>
 	<widget class="GtkButton" id="buttonAGE">
 	  <property name="width_request">144</property>
 	  <property name="height_request">49</property>
@@ -423,6 +405,24 @@
 	</widget>
 	<packing>
 	  <property name="x">840</property>
+	  <property name="y">600</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkButton" id="buttonAGC">
+	  <property name="width_request">144</property>
+	  <property name="height_request">49</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes">G.Clients</property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_buttonAGC_clicked" last_modification_time="Wed, 20 Nov 2019 19:36:15 GMT"/>
+	</widget>
+	<packing>
+	  <property name="x">88</property>
 	  <property name="y">600</property>
 	</packing>
       </child>
@@ -2358,19 +2358,19 @@
       <property name="visible">True</property>
 
       <child>
-	<widget class="GtkButton" id="button12">
-	  <property name="width_request">56</property>
-	  <property name="height_request">49</property>
+	<widget class="GtkImage" id="image20">
+	  <property name="width_request">1080</property>
+	  <property name="height_request">808</property>
 	  <property name="visible">True</property>
-	  <property name="can_focus">True</property>
-	  <property name="label" translatable="yes"></property>
-	  <property name="use_underline">True</property>
-	  <property name="relief">GTK_RELIEF_NORMAL</property>
-	  <property name="focus_on_click">True</property>
+	  <property name="pixbuf">emp.jpg</property>
+	  <property name="xalign">0.5</property>
+	  <property name="yalign">0.5</property>
+	  <property name="xpad">0</property>
+	  <property name="ypad">0</property>
 	</widget>
 	<packing>
-	  <property name="x">576</property>
-	  <property name="y">432</property>
+	  <property name="x">0</property>
+	  <property name="y">0</property>
 	</packing>
       </child>
 
@@ -2395,14 +2395,85 @@
 	  <property name="angle">0</property>
 	</widget>
 	<packing>
-	  <property name="x">0</property>
-	  <property name="y">0</property>
+	  <property name="x">328</property>
+	  <property name="y">120</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkButton" id="buttonEGC">
+	  <property name="width_request">144</property>
+	  <property name="height_request">49</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes">G.Clients</property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_buttonEGC_clicked" last_modification_time="Sat, 23 Nov 2019 10:20:56 GMT"/>
+	</widget>
+	<packing>
+	  <property name="x">72</property>
+	  <property name="y">536</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkButton" id="buttonEGFactures">
+	  <property name="width_request">144</property>
+	  <property name="height_request">49</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes">Factures</property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_buttonEGFactures_clicked" last_modification_time="Sat, 23 Nov 2019 10:21:19 GMT"/>
+	</widget>
+	<packing>
+	  <property name="x">272</property>
+	  <property name="y">536</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkButton" id="buttonEPrestations">
+	  <property name="width_request">144</property>
+	  <property name="height_request">49</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes">Prestations</property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_buttonEPrestations_clicked" last_modification_time="Sat, 23 Nov 2019 10:21:12 GMT"/>
+	</widget>
+	<packing>
+	  <property name="x">464</property>
+	  <property name="y">536</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkButton" id="button12">
+	  <property name="width_request">144</property>
+	  <property name="height_request">49</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes"></property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	</widget>
+	<packing>
+	  <property name="x">648</property>
+	  <property name="y">536</property>
 	</packing>
       </child>
 
       <child>
 	<widget class="GtkButton" id="button11">
-	  <property name="width_request">56</property>
+	  <property name="width_request">144</property>
 	  <property name="height_request">49</property>
 	  <property name="visible">True</property>
 	  <property name="can_focus">True</property>
@@ -2422,69 +2493,15 @@
 	  </child>
 	</widget>
 	<packing>
-	  <property name="x">512</property>
-	  <property name="y">432</property>
-	</packing>
-      </child>
-
-      <child>
-	<widget class="GtkButton" id="buttonEPrestations">
-	  <property name="width_request">120</property>
-	  <property name="height_request">41</property>
-	  <property name="visible">True</property>
-	  <property name="can_focus">True</property>
-	  <property name="label" translatable="yes">Prestations</property>
-	  <property name="use_underline">True</property>
-	  <property name="relief">GTK_RELIEF_NORMAL</property>
-	  <property name="focus_on_click">True</property>
-	  <signal name="clicked" handler="on_buttonEPrestations_clicked" last_modification_time="Sat, 23 Nov 2019 10:21:12 GMT"/>
-	</widget>
-	<packing>
-	  <property name="x">280</property>
-	  <property name="y">296</property>
-	</packing>
-      </child>
-
-      <child>
-	<widget class="GtkButton" id="buttonEGFactures">
-	  <property name="width_request">120</property>
-	  <property name="height_request">41</property>
-	  <property name="visible">True</property>
-	  <property name="can_focus">True</property>
-	  <property name="label" translatable="yes">Factures</property>
-	  <property name="use_underline">True</property>
-	  <property name="relief">GTK_RELIEF_NORMAL</property>
-	  <property name="focus_on_click">True</property>
-	  <signal name="clicked" handler="on_buttonEGFactures_clicked" last_modification_time="Sat, 23 Nov 2019 10:21:19 GMT"/>
-	</widget>
-	<packing>
-	  <property name="x">480</property>
-	  <property name="y">296</property>
-	</packing>
-      </child>
-
-      <child>
-	<widget class="GtkButton" id="buttonEGC">
-	  <property name="width_request">120</property>
-	  <property name="height_request">41</property>
-	  <property name="visible">True</property>
-	  <property name="can_focus">True</property>
-	  <property name="label" translatable="yes">G.Clients</property>
-	  <property name="use_underline">True</property>
-	  <property name="relief">GTK_RELIEF_NORMAL</property>
-	  <property name="focus_on_click">True</property>
-	  <signal name="clicked" handler="on_buttonEGC_clicked" last_modification_time="Sat, 23 Nov 2019 10:20:56 GMT"/>
-	</widget>
-	<packing>
-	  <property name="x">80</property>
-	  <property name="y">296</property>
+	  <property name="x">840</property>
+	  <property name="y">536</property>
 	</packing>
       </child>
 
       <child>
 	<widget class="GtkButton" id="buttonDecoEmp">
-	  <property name="width_request">176</property>
-	  <property name="height_request">41</property>
+	  <property name="width_request">196</property>
+	  <property name="height_request">51</property>
 	  <property name="visible">True</property>
 	  <property name="can_focus">True</property>
 	  <property name="label" translatable="yes">Se déconecter</property>
@@ -2494,8 +2511,8 @@
 	  <signal name="clicked" handler="on_buttonDecoEmp_clicked" last_modification_time="Sat, 23 Nov 2019 10:34:02 GMT"/>
 	</widget>
 	<packing>
-	  <property name="x">16</property>
-	  <property name="y">464</property>
+	  <property name="x">0</property>
+	  <property name="y">756</property>
 	</packing>
       </child>
     </widget>
