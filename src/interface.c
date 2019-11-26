@@ -1467,12 +1467,13 @@ create_ModeClient (void)
 {
   GtkWidget *ModeClient;
   GtkWidget *fixed10;
+  GtkWidget *image21;
   GtkWidget *label26;
-  GtkWidget *buttonPanier;
-  GtkWidget *buttonCHyber;
   GtkWidget *buttonCLocation;
+  GtkWidget *buttonCHyber;
   GtkWidget *buttonCVols;
   GtkWidget *buttondecoclient;
+  GtkWidget *buttonPanier;
 
   ModeClient = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (ModeClient), _("Mode Clients"));
@@ -1481,35 +1482,40 @@ create_ModeClient (void)
   gtk_widget_show (fixed10);
   gtk_container_add (GTK_CONTAINER (ModeClient), fixed10);
 
+  image21 = create_pixmap (ModeClient, "client.jpg");
+  gtk_widget_show (image21);
+  gtk_fixed_put (GTK_FIXED (fixed10), image21, 0, 0);
+  gtk_widget_set_size_request (image21, 1080, 808);
+
   label26 = gtk_label_new (_("Bienveunue Ch\303\250r(e) Client(e) , \n                                                      \303\240 Votre Service"));
   gtk_widget_show (label26);
-  gtk_fixed_put (GTK_FIXED (fixed10), label26, 0, 0);
+  gtk_fixed_put (GTK_FIXED (fixed10), label26, 352, 128);
   gtk_widget_set_size_request (label26, 288, 72);
-
-  buttonPanier = gtk_button_new_with_mnemonic (_("button21"));
-  gtk_widget_show (buttonPanier);
-  gtk_fixed_put (GTK_FIXED (fixed10), buttonPanier, 592, 32);
-  gtk_widget_set_size_request (buttonPanier, 48, 40);
-
-  buttonCHyber = gtk_button_new_with_mnemonic (_("Hybergement"));
-  gtk_widget_show (buttonCHyber);
-  gtk_fixed_put (GTK_FIXED (fixed10), buttonCHyber, 280, 296);
-  gtk_widget_set_size_request (buttonCHyber, 120, 41);
 
   buttonCLocation = gtk_button_new_with_mnemonic (_("Location"));
   gtk_widget_show (buttonCLocation);
-  gtk_fixed_put (GTK_FIXED (fixed10), buttonCLocation, 480, 296);
-  gtk_widget_set_size_request (buttonCLocation, 120, 41);
+  gtk_fixed_put (GTK_FIXED (fixed10), buttonCLocation, 488, 616);
+  gtk_widget_set_size_request (buttonCLocation, 144, 49);
+
+  buttonCHyber = gtk_button_new_with_mnemonic (_("Hybergement"));
+  gtk_widget_show (buttonCHyber);
+  gtk_fixed_put (GTK_FIXED (fixed10), buttonCHyber, 760, 616);
+  gtk_widget_set_size_request (buttonCHyber, 144, 49);
 
   buttonCVols = gtk_button_new_with_mnemonic (_("Vols"));
   gtk_widget_show (buttonCVols);
-  gtk_fixed_put (GTK_FIXED (fixed10), buttonCVols, 80, 296);
-  gtk_widget_set_size_request (buttonCVols, 120, 41);
+  gtk_fixed_put (GTK_FIXED (fixed10), buttonCVols, 216, 616);
+  gtk_widget_set_size_request (buttonCVols, 144, 49);
 
   buttondecoclient = gtk_button_new_with_mnemonic (_("Se d\303\251conecter"));
   gtk_widget_show (buttondecoclient);
-  gtk_fixed_put (GTK_FIXED (fixed10), buttondecoclient, 16, 464);
-  gtk_widget_set_size_request (buttondecoclient, 176, 41);
+  gtk_fixed_put (GTK_FIXED (fixed10), buttondecoclient, 0, 755);
+  gtk_widget_set_size_request (buttondecoclient, 196, 51);
+
+  buttonPanier = gtk_button_new_with_mnemonic (_("button21"));
+  gtk_widget_show (buttonPanier);
+  gtk_fixed_put (GTK_FIXED (fixed10), buttonPanier, 896, 88);
+  gtk_widget_set_size_request (buttonPanier, 104, 48);
 
   g_signal_connect ((gpointer) buttondecoclient, "clicked",
                     G_CALLBACK (on_buttondecoclient_clicked),
@@ -1518,12 +1524,13 @@ create_ModeClient (void)
   /* Store pointers to all widgets, for use by lookup_widget(). */
   GLADE_HOOKUP_OBJECT_NO_REF (ModeClient, ModeClient, "ModeClient");
   GLADE_HOOKUP_OBJECT (ModeClient, fixed10, "fixed10");
+  GLADE_HOOKUP_OBJECT (ModeClient, image21, "image21");
   GLADE_HOOKUP_OBJECT (ModeClient, label26, "label26");
-  GLADE_HOOKUP_OBJECT (ModeClient, buttonPanier, "buttonPanier");
-  GLADE_HOOKUP_OBJECT (ModeClient, buttonCHyber, "buttonCHyber");
   GLADE_HOOKUP_OBJECT (ModeClient, buttonCLocation, "buttonCLocation");
+  GLADE_HOOKUP_OBJECT (ModeClient, buttonCHyber, "buttonCHyber");
   GLADE_HOOKUP_OBJECT (ModeClient, buttonCVols, "buttonCVols");
   GLADE_HOOKUP_OBJECT (ModeClient, buttondecoclient, "buttondecoclient");
+  GLADE_HOOKUP_OBJECT (ModeClient, buttonPanier, "buttonPanier");
 
   return ModeClient;
 }
