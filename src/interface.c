@@ -1587,22 +1587,22 @@ create_ajouteremp (void)
   GtkWidget *label87;
   GtkWidget *label86;
   GtkWidget *label85;
-  GtkObject *spinbutton1_adj;
-  GtkWidget *spinbutton1;
-  GtkObject *spinbutton2_adj;
-  GtkWidget *spinbutton2;
-  GtkObject *spinbutton3_adj;
-  GtkWidget *spinbutton3;
+  GtkObject *jour_adj;
+  GtkWidget *jour;
+  GtkObject *mois_adj;
+  GtkWidget *mois;
+  GtkObject *year_adj;
+  GtkWidget *year;
   GtkWidget *label88;
   GtkWidget *label89;
   GtkWidget *label90;
+  GtkWidget *buttonretourajoutadmin;
+  GtkWidget *image23;
   GtkWidget *buttonvaliderajouteremploye;
   GtkWidget *alignment9;
   GtkWidget *hbox9;
   GtkWidget *image22;
   GtkWidget *label91;
-  GtkWidget *buttonretourajoutadmin;
-  GtkWidget *image23;
 
   ajouteremp = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (ajouteremp), _("Ajouter Employee"));
@@ -1660,23 +1660,23 @@ create_ajouteremp (void)
   gtk_fixed_put (GTK_FIXED (fixed16), label85, 64, 200);
   gtk_widget_set_size_request (label85, 176, 32);
 
-  spinbutton1_adj = gtk_adjustment_new (1, 1, 31, 1, 10, 10);
-  spinbutton1 = gtk_spin_button_new (GTK_ADJUSTMENT (spinbutton1_adj), 1, 0);
-  gtk_widget_show (spinbutton1);
-  gtk_fixed_put (GTK_FIXED (fixed16), spinbutton1, 304, 200);
-  gtk_widget_set_size_request (spinbutton1, 70, 34);
+  jour_adj = gtk_adjustment_new (1, 1, 31, 1, 10, 10);
+  jour = gtk_spin_button_new (GTK_ADJUSTMENT (jour_adj), 1, 0);
+  gtk_widget_show (jour);
+  gtk_fixed_put (GTK_FIXED (fixed16), jour, 304, 200);
+  gtk_widget_set_size_request (jour, 70, 34);
 
-  spinbutton2_adj = gtk_adjustment_new (1, 1, 12, 1, 10, 10);
-  spinbutton2 = gtk_spin_button_new (GTK_ADJUSTMENT (spinbutton2_adj), 1, 0);
-  gtk_widget_show (spinbutton2);
-  gtk_fixed_put (GTK_FIXED (fixed16), spinbutton2, 440, 200);
-  gtk_widget_set_size_request (spinbutton2, 70, 34);
+  mois_adj = gtk_adjustment_new (1, 1, 12, 1, 10, 10);
+  mois = gtk_spin_button_new (GTK_ADJUSTMENT (mois_adj), 1, 0);
+  gtk_widget_show (mois);
+  gtk_fixed_put (GTK_FIXED (fixed16), mois, 440, 200);
+  gtk_widget_set_size_request (mois, 70, 34);
 
-  spinbutton3_adj = gtk_adjustment_new (1, 2000, 2200, 1, 10, 10);
-  spinbutton3 = gtk_spin_button_new (GTK_ADJUSTMENT (spinbutton3_adj), 1, 0);
-  gtk_widget_show (spinbutton3);
-  gtk_fixed_put (GTK_FIXED (fixed16), spinbutton3, 600, 200);
-  gtk_widget_set_size_request (spinbutton3, 70, 34);
+  year_adj = gtk_adjustment_new (1, 2000, 2200, 1, 10, 10);
+  year = gtk_spin_button_new (GTK_ADJUSTMENT (year_adj), 1, 0);
+  gtk_widget_show (year);
+  gtk_fixed_put (GTK_FIXED (fixed16), year, 600, 200);
+  gtk_widget_set_size_request (year, 70, 34);
 
   label88 = gtk_label_new (_("Jour :"));
   gtk_widget_show (label88);
@@ -1692,6 +1692,15 @@ create_ajouteremp (void)
   gtk_widget_show (label90);
   gtk_fixed_put (GTK_FIXED (fixed16), label90, 528, 208);
   gtk_widget_set_size_request (label90, 56, 24);
+
+  buttonretourajoutadmin = gtk_button_new ();
+  gtk_widget_show (buttonretourajoutadmin);
+  gtk_fixed_put (GTK_FIXED (fixed16), buttonretourajoutadmin, 8, 8);
+  gtk_widget_set_size_request (buttonretourajoutadmin, 88, 32);
+
+  image23 = gtk_image_new_from_stock ("gtk-undo", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image23);
+  gtk_container_add (GTK_CONTAINER (buttonretourajoutadmin), image23);
 
   buttonvaliderajouteremploye = gtk_button_new ();
   gtk_widget_show (buttonvaliderajouteremploye);
@@ -1714,17 +1723,11 @@ create_ajouteremp (void)
   gtk_widget_show (label91);
   gtk_box_pack_start (GTK_BOX (hbox9), label91, FALSE, FALSE, 0);
 
-  buttonretourajoutadmin = gtk_button_new ();
-  gtk_widget_show (buttonretourajoutadmin);
-  gtk_fixed_put (GTK_FIXED (fixed16), buttonretourajoutadmin, 8, 8);
-  gtk_widget_set_size_request (buttonretourajoutadmin, 88, 32);
-
-  image23 = gtk_image_new_from_stock ("gtk-undo", GTK_ICON_SIZE_BUTTON);
-  gtk_widget_show (image23);
-  gtk_container_add (GTK_CONTAINER (buttonretourajoutadmin), image23);
-
   g_signal_connect ((gpointer) buttonretourajoutadmin, "clicked",
-                    G_CALLBACK (on_buttonEAretour_clicked),
+                    G_CALLBACK (on_buttonretourajoutadmin_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonvaliderajouteremploye, "clicked",
+                    G_CALLBACK (on_buttonvaliderajouteremploye_clicked),
                     NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
@@ -1739,19 +1742,19 @@ create_ajouteremp (void)
   GLADE_HOOKUP_OBJECT (ajouteremp, label87, "label87");
   GLADE_HOOKUP_OBJECT (ajouteremp, label86, "label86");
   GLADE_HOOKUP_OBJECT (ajouteremp, label85, "label85");
-  GLADE_HOOKUP_OBJECT (ajouteremp, spinbutton1, "spinbutton1");
-  GLADE_HOOKUP_OBJECT (ajouteremp, spinbutton2, "spinbutton2");
-  GLADE_HOOKUP_OBJECT (ajouteremp, spinbutton3, "spinbutton3");
+  GLADE_HOOKUP_OBJECT (ajouteremp, jour, "jour");
+  GLADE_HOOKUP_OBJECT (ajouteremp, mois, "mois");
+  GLADE_HOOKUP_OBJECT (ajouteremp, year, "year");
   GLADE_HOOKUP_OBJECT (ajouteremp, label88, "label88");
   GLADE_HOOKUP_OBJECT (ajouteremp, label89, "label89");
   GLADE_HOOKUP_OBJECT (ajouteremp, label90, "label90");
+  GLADE_HOOKUP_OBJECT (ajouteremp, buttonretourajoutadmin, "buttonretourajoutadmin");
+  GLADE_HOOKUP_OBJECT (ajouteremp, image23, "image23");
   GLADE_HOOKUP_OBJECT (ajouteremp, buttonvaliderajouteremploye, "buttonvaliderajouteremploye");
   GLADE_HOOKUP_OBJECT (ajouteremp, alignment9, "alignment9");
   GLADE_HOOKUP_OBJECT (ajouteremp, hbox9, "hbox9");
   GLADE_HOOKUP_OBJECT (ajouteremp, image22, "image22");
   GLADE_HOOKUP_OBJECT (ajouteremp, label91, "label91");
-  GLADE_HOOKUP_OBJECT (ajouteremp, buttonretourajoutadmin, "buttonretourajoutadmin");
-  GLADE_HOOKUP_OBJECT (ajouteremp, image23, "image23");
 
   return ajouteremp;
 }

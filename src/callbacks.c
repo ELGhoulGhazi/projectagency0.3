@@ -376,3 +376,60 @@ gtk_widget_hide(Gemp);
 
 }
 
+
+void
+on_buttonretourajoutadmin_clicked      (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *ajoutemp ,*Gemp;
+
+ajoutemp=lookup_widget(objet_graphique,"ajouteremp");
+Gemp=create_GestionAEmployes();
+gtk_widget_show(Gemp);
+gtk_widget_hide(ajoutemp);
+}
+
+
+void
+on_buttonvaliderajouteremploye_clicked (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *ajoutemp ,*Gemp;
+
+FILE *f;
+
+char nom[30];
+char prenom[30] ;
+char user[30] ;
+char password[30] ;
+int j=0,m=0,y=0 ; 
+
+GtkWidget *inputuser,*inputpass ,*inputnom ,*inputprenom ,*inputj,*inputm,*inputy ;  
+
+
+inputnom=lookup_widget(objet_graphique,"entrynomemp"); 
+inputprenom=lookup_widget(objet_graphique,"entryprenomemp");
+inputj=lookup_widget(objet_graphique,"jour"); 
+inputm=lookup_widget(objet_graphique,"mois"); 
+inputy=lookup_widget(objet_graphique,"years"); 
+inputuser=lookup_widget(objet_graphique,"entryuseremp");
+inputpass=lookup_widget(objet_graphique,"entrypassemp");
+ajoutemp=lookup_widget(objet_graphique,"ajouteremp");
+
+
+strcpy(nom,gtk_entry_get_text(GTK_ENTRY(inputnom)));
+strcpy(prenom,gtk_entry_get_text(GTK_ENTRY(inputprenom)));
+j=gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(inputj));
+m=gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(inputm));
+y=gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(inputy));
+
+strcpy(user,gtk_entry_get_text(GTK_ENTRY(inputuser)));
+strcpy(password,gtk_entry_get_text(GTK_ENTRY(inputpass)));
+
+ajouteremployer(nom,prenom,j,m,y,user,password);
+
+Gemp=create_GestionAEmployes();
+gtk_widget_show(Gemp);
+gtk_widget_hide(ajoutemp);
+}
+

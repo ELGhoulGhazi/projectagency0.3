@@ -20,7 +20,7 @@ fclose(f);
 }
 
 
-void ajouteremployer (char nom[], char prenom[] ,char date ,char user[] ,char password[])
+void ajouteremployer (char nom[], char prenom[] ,int j ,int m,int y ,char user[] ,char password[])
 {
 FILE *f;
 int role=2 ;

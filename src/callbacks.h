@@ -87,3 +87,11 @@ on_buttonDecoEmp_clicked               (GtkWidget       *objet_graphique,
 void
 on_buttonAEMajouter_clicked            (GtkWidget       *objet_graphique,
                                         gpointer         user_data);
+
+void
+on_buttonretourajoutadmin_clicked      (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonvaliderajouteremploye_clicked (GtkWidget       *button,
+                                        gpointer         user_data);

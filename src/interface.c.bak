@@ -592,14 +592,14 @@ create_GestionAEmployes (void)
   GtkWidget *hbox4;
   GtkWidget *image6;
   GtkWidget *label33;
-  GtkWidget *buttonEAretour;
-  GtkWidget *image4;
   GtkWidget *treeview1;
   GtkWidget *buttonAEMajouter;
   GtkWidget *alignment5;
   GtkWidget *hbox5;
   GtkWidget *image7;
   GtkWidget *label53;
+  GtkWidget *buttonEAretour;
+  GtkWidget *image4;
 
   GestionAEmployes = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (GestionAEmployes), _("Gestion des Employ\303\251s"));
@@ -662,15 +662,6 @@ create_GestionAEmployes (void)
   gtk_widget_show (label33);
   gtk_box_pack_start (GTK_BOX (hbox4), label33, FALSE, FALSE, 0);
 
-  buttonEAretour = gtk_button_new ();
-  gtk_widget_show (buttonEAretour);
-  gtk_fixed_put (GTK_FIXED (fixed5), buttonEAretour, 8, 8);
-  gtk_widget_set_size_request (buttonEAretour, 88, 32);
-
-  image4 = gtk_image_new_from_stock ("gtk-undo", GTK_ICON_SIZE_BUTTON);
-  gtk_widget_show (image4);
-  gtk_container_add (GTK_CONTAINER (buttonEAretour), image4);
-
   treeview1 = gtk_tree_view_new ();
   gtk_widget_show (treeview1);
   gtk_fixed_put (GTK_FIXED (fixed5), treeview1, 32, 72);
@@ -697,11 +688,20 @@ create_GestionAEmployes (void)
   gtk_widget_show (label53);
   gtk_box_pack_start (GTK_BOX (hbox5), label53, FALSE, FALSE, 0);
 
-  g_signal_connect ((gpointer) buttonEAretour, "clicked",
-                    G_CALLBACK (on_buttonEAretour_clicked),
-                    NULL);
+  buttonEAretour = gtk_button_new ();
+  gtk_widget_show (buttonEAretour);
+  gtk_fixed_put (GTK_FIXED (fixed5), buttonEAretour, 8, 8);
+  gtk_widget_set_size_request (buttonEAretour, 88, 32);
+
+  image4 = gtk_image_new_from_stock ("gtk-undo", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image4);
+  gtk_container_add (GTK_CONTAINER (buttonEAretour), image4);
+
   g_signal_connect ((gpointer) buttonAEMajouter, "clicked",
                     G_CALLBACK (on_buttonAEMajouter_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonEAretour, "clicked",
+                    G_CALLBACK (on_buttonEAretour_clicked),
                     NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
@@ -719,14 +719,14 @@ create_GestionAEmployes (void)
   GLADE_HOOKUP_OBJECT (GestionAEmployes, hbox4, "hbox4");
   GLADE_HOOKUP_OBJECT (GestionAEmployes, image6, "image6");
   GLADE_HOOKUP_OBJECT (GestionAEmployes, label33, "label33");
-  GLADE_HOOKUP_OBJECT (GestionAEmployes, buttonEAretour, "buttonEAretour");
-  GLADE_HOOKUP_OBJECT (GestionAEmployes, image4, "image4");
   GLADE_HOOKUP_OBJECT (GestionAEmployes, treeview1, "treeview1");
   GLADE_HOOKUP_OBJECT (GestionAEmployes, buttonAEMajouter, "buttonAEMajouter");
   GLADE_HOOKUP_OBJECT (GestionAEmployes, alignment5, "alignment5");
   GLADE_HOOKUP_OBJECT (GestionAEmployes, hbox5, "hbox5");
   GLADE_HOOKUP_OBJECT (GestionAEmployes, image7, "image7");
   GLADE_HOOKUP_OBJECT (GestionAEmployes, label53, "label53");
+  GLADE_HOOKUP_OBJECT (GestionAEmployes, buttonEAretour, "buttonEAretour");
+  GLADE_HOOKUP_OBJECT (GestionAEmployes, image4, "image4");
 
   return GestionAEmployes;
 }
@@ -1596,6 +1596,8 @@ create_ajouteremp (void)
   GtkWidget *label88;
   GtkWidget *label89;
   GtkWidget *label90;
+  GtkWidget *buttonretourajoutadmin;
+  GtkWidget *image23;
   GtkWidget *buttonvaliderajouteremploye;
   GtkWidget *alignment9;
   GtkWidget *hbox9;
@@ -1691,6 +1693,15 @@ create_ajouteremp (void)
   gtk_fixed_put (GTK_FIXED (fixed16), label90, 528, 208);
   gtk_widget_set_size_request (label90, 56, 24);
 
+  buttonretourajoutadmin = gtk_button_new ();
+  gtk_widget_show (buttonretourajoutadmin);
+  gtk_fixed_put (GTK_FIXED (fixed16), buttonretourajoutadmin, 8, 8);
+  gtk_widget_set_size_request (buttonretourajoutadmin, 88, 32);
+
+  image23 = gtk_image_new_from_stock ("gtk-undo", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image23);
+  gtk_container_add (GTK_CONTAINER (buttonretourajoutadmin), image23);
+
   buttonvaliderajouteremploye = gtk_button_new ();
   gtk_widget_show (buttonvaliderajouteremploye);
   gtk_fixed_put (GTK_FIXED (fixed16), buttonvaliderajouteremploye, 488, 424);
@@ -1712,6 +1723,13 @@ create_ajouteremp (void)
   gtk_widget_show (label91);
   gtk_box_pack_start (GTK_BOX (hbox9), label91, FALSE, FALSE, 0);
 
+  g_signal_connect ((gpointer) buttonretourajoutadmin, "clicked",
+                    G_CALLBACK (on_buttonretourajoutadmin_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonvaliderajouteremploye, "clicked",
+                    G_CALLBACK (on_buttonvaliderajouteremploye_clicked),
+                    NULL);
+
   /* Store pointers to all widgets, for use by lookup_widget(). */
   GLADE_HOOKUP_OBJECT_NO_REF (ajouteremp, ajouteremp, "ajouteremp");
   GLADE_HOOKUP_OBJECT (ajouteremp, fixed16, "fixed16");
@@ -1730,6 +1748,8 @@ create_ajouteremp (void)
   GLADE_HOOKUP_OBJECT (ajouteremp, label88, "label88");
   GLADE_HOOKUP_OBJECT (ajouteremp, label89, "label89");
   GLADE_HOOKUP_OBJECT (ajouteremp, label90, "label90");
+  GLADE_HOOKUP_OBJECT (ajouteremp, buttonretourajoutadmin, "buttonretourajoutadmin");
+  GLADE_HOOKUP_OBJECT (ajouteremp, image23, "image23");
   GLADE_HOOKUP_OBJECT (ajouteremp, buttonvaliderajouteremploye, "buttonvaliderajouteremploye");
   GLADE_HOOKUP_OBJECT (ajouteremp, alignment9, "alignment9");
   GLADE_HOOKUP_OBJECT (ajouteremp, hbox9, "hbox9");
