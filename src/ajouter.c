@@ -15,7 +15,8 @@ PRENOM,
 JOUR, 
 MOIS,
 ANNEE, 
-COLUMNS
+COLUMNS,
+CIN 
 }; 
 
 
@@ -27,6 +28,11 @@ int role=3 ;
 f=fopen("/home/ggmghoul/Desktop/agency-master/src/users.txt","a");
 if(f!=NULL)
 {fprintf(f,"%s %s %d \n",user,password,role);
+fclose(f);
+}
+f=fopen("/home/ggmghoul/Desktop/agency-master/src/client.txt","a");
+if(f!=NULL)
+{fprintf(f,"%s %s %s \n",nom,prenom,CIN);
 fclose(f);
 }
 }
@@ -111,6 +117,64 @@ g_object_unref (store) ;
 }
 }
 }
+
+
+
+void afficherclient (GtkTreeView *liste)
+{
+GtkCellRenderer *render ;
+GtkTreeViewColumn *column ; 
+GtkTreeIter iter ; 
+
+GtkListStore *store ;
+
+char nom[30] ;
+char prenom[30] ;
+char cin[30];   
+
+store=NULL ; 
+FILE* f ; 
+
+store=gtk_tree_view_get_model(liste) ; 
+if (store==NULL) 
+{
+render=gtk_cell_renderer_text_new () ; 
+column =gtk_tree_view_column_new_with_attributes("NOM",render,"text",NOM,NULL) ; 
+gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
+
+
+render=gtk_cell_renderer_text_new () ; 
+column =gtk_tree_view_column_new_with_attributes("PRENOM",render,"text",PRENOM,NULL) ; 
+gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
+
+
+render=gtk_cell_renderer_text_new () ; 
+column =gtk_tree_view_column_new_with_attributes("CIN",render,"text",CIN,NULL) ; 
+gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
+
+
+store=gtk_list_store_new(COLUMNS,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING) ; 
+
+f=fopen("/home/ggmghoul/Desktop/agency-master/src/client.txt","r") ; 
+if (f==NULL) 
+{
+return ; 
+}
+else 
+{
+f=fopen("/home/ggmghoul/Desktop/agency-master/src/client.txt","a+") ;
+ while(fscanf(f," %s %s %s \n" ,nom,prenom,cin)!=EOF) 
+{
+gtk_list_store_append (store,&iter) ; 
+gtk_list_store_set (store,&iter,nom,NOM,prenom,PRENOM,cin,CIN,-1) ; 
+}
+fclose(f) ; 
+gtk_tree_view_set_model(GTK_TREE_VIEW (liste),GTK_TREE_MODEL (store)); 
+g_object_unref (store) ; 
+}
+}
+}
+
 
 /*
 void supprimeremployer()

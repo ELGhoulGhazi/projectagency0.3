@@ -66,12 +66,15 @@ on_buttonAGC_clicked                   (GtkWidget       *objet_graphique,
                                         gpointer         user_data)
 {
 
-GtkWidget *Admin ,*GClients ;
+GtkWidget *Admin ,*GClients,*treeview ;
 
 Admin=lookup_widget(objet_graphique,"ModeAdmin");
 GClients=create_GestionAClient(); 
 gtk_widget_show(GClients);
 gtk_widget_hide(Admin);
+
+treeview=lookup_widget(GClients,"treeviewclient");
+afficheremp(treeview) ; 
 
 }
 
