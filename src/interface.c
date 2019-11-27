@@ -840,10 +840,14 @@ create_ModeClient (void)
   GtkWidget *image21;
   GtkWidget *label26;
   GtkWidget *buttondecoclient;
-  GtkWidget *buttonPanier;
   GtkWidget *buttonCVols;
   GtkWidget *buttonCLocation;
   GtkWidget *buttonCHyber;
+  GtkWidget *buttonPanier;
+  GtkWidget *alignment13;
+  GtkWidget *hbox13;
+  GtkWidget *image30;
+  GtkWidget *label95;
 
   ModeClient = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (ModeClient), _("Mode Clients"));
@@ -867,11 +871,6 @@ create_ModeClient (void)
   gtk_fixed_put (GTK_FIXED (fixed10), buttondecoclient, 0, 755);
   gtk_widget_set_size_request (buttondecoclient, 196, 51);
 
-  buttonPanier = gtk_button_new_with_mnemonic (_("button21"));
-  gtk_widget_show (buttonPanier);
-  gtk_fixed_put (GTK_FIXED (fixed10), buttonPanier, 896, 88);
-  gtk_widget_set_size_request (buttonPanier, 104, 48);
-
   buttonCVols = gtk_button_new_with_mnemonic (_("Vols"));
   gtk_widget_show (buttonCVols);
   gtk_fixed_put (GTK_FIXED (fixed10), buttonCVols, 216, 616);
@@ -886,6 +885,28 @@ create_ModeClient (void)
   gtk_widget_show (buttonCHyber);
   gtk_fixed_put (GTK_FIXED (fixed10), buttonCHyber, 760, 616);
   gtk_widget_set_size_request (buttonCHyber, 144, 49);
+
+  buttonPanier = gtk_button_new ();
+  gtk_widget_show (buttonPanier);
+  gtk_fixed_put (GTK_FIXED (fixed10), buttonPanier, 888, 56);
+  gtk_widget_set_size_request (buttonPanier, 144, 48);
+  gtk_button_set_relief (GTK_BUTTON (buttonPanier), GTK_RELIEF_NONE);
+
+  alignment13 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment13);
+  gtk_container_add (GTK_CONTAINER (buttonPanier), alignment13);
+
+  hbox13 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox13);
+  gtk_container_add (GTK_CONTAINER (alignment13), hbox13);
+
+  image30 = gtk_image_new_from_stock ("gtk-about", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image30);
+  gtk_box_pack_start (GTK_BOX (hbox13), image30, FALSE, FALSE, 0);
+
+  label95 = gtk_label_new_with_mnemonic (_("Vos Reservation"));
+  gtk_widget_show (label95);
+  gtk_box_pack_start (GTK_BOX (hbox13), label95, FALSE, FALSE, 0);
 
   g_signal_connect ((gpointer) buttondecoclient, "clicked",
                     G_CALLBACK (on_buttondecoclient_clicked),
@@ -906,10 +927,14 @@ create_ModeClient (void)
   GLADE_HOOKUP_OBJECT (ModeClient, image21, "image21");
   GLADE_HOOKUP_OBJECT (ModeClient, label26, "label26");
   GLADE_HOOKUP_OBJECT (ModeClient, buttondecoclient, "buttondecoclient");
-  GLADE_HOOKUP_OBJECT (ModeClient, buttonPanier, "buttonPanier");
   GLADE_HOOKUP_OBJECT (ModeClient, buttonCVols, "buttonCVols");
   GLADE_HOOKUP_OBJECT (ModeClient, buttonCLocation, "buttonCLocation");
   GLADE_HOOKUP_OBJECT (ModeClient, buttonCHyber, "buttonCHyber");
+  GLADE_HOOKUP_OBJECT (ModeClient, buttonPanier, "buttonPanier");
+  GLADE_HOOKUP_OBJECT (ModeClient, alignment13, "alignment13");
+  GLADE_HOOKUP_OBJECT (ModeClient, hbox13, "hbox13");
+  GLADE_HOOKUP_OBJECT (ModeClient, image30, "image30");
+  GLADE_HOOKUP_OBJECT (ModeClient, label95, "label95");
 
   return ModeClient;
 }
