@@ -58,7 +58,9 @@ GtkListStore *store ;
 
 char nom[30] ;
 char prenom[30] ;
-int j,m,y; 
+char j[30];
+char m[30];
+char y[30];  
 
 store=NULL ; 
 FILE* f ; 
@@ -88,7 +90,7 @@ column =gtk_tree_view_column_new_with_attributes("ANNEE",render,"text",ANNEE,NUL
 gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
 
 
-store=gtk_list_store_new(COLUMNS,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_INT,G_TYPE_INT,G_TYPE_INT) ; 
+store=gtk_list_store_new(COLUMNS,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING) ; 
 
 f=fopen("/home/ggmghoul/Desktop/agency-master/src/empinfo.txt","r") ; 
 if (f==NULL) 
@@ -98,7 +100,7 @@ return ;
 else 
 {
 f=fopen("/home/ggmghoul/Desktop/agency-master/src/empinfo.txt","a+") ;
- while(fscanf(f," %s %s %d %d %d \n" ,nom,prenom,&j,&m,&y)!=EOF) 
+ while(fscanf(f," %s %s %s %s %s \n" ,nom,prenom,j,m,y)!=EOF) 
 {
 gtk_list_store_append (store,&iter) ; 
 gtk_list_store_set (store,&iter,nom,NOM,prenom,PRENOM,j,JOUR,m,MOIS,y,ANNEE,-1) ; 

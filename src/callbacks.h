@@ -93,5 +93,25 @@ on_buttonretourajoutadmin_clicked      (GtkWidget       *objet_graphique,
                                         gpointer         user_data);
 
 void
-on_buttonvaliderajouteremploye_clicked (GtkWidget       *button,
+on_buttonvaliderajouteremploye_clicked (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonCVols_clicked                 (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonCLocation_clicked             (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonCHyber_clicked                (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonretourVC_clicked              (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonvalidervol_clicked            (GtkButton       *button,
                                         gpointer         user_data);

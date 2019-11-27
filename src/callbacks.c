@@ -437,3 +437,51 @@ gtk_widget_show(Gemp);
 gtk_widget_hide(ajoutemp);
 }
 
+
+void
+on_buttonCVols_clicked                 (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *vol ,*Client;
+
+Client=lookup_widget(objet_graphique,"ModeClient");
+vol=create_Vols();
+gtk_widget_show(vol);
+gtk_widget_hide(Client);
+}
+
+
+void
+on_buttonCLocation_clicked             (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_buttonCHyber_clicked                (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+
+}
+
+void
+on_buttonretourVC_clicked              (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *vol ,*Client;
+
+vol=lookup_widget(objet_graphique,"Vols");
+Client=create_ModeClient();
+gtk_widget_show(Client);
+gtk_widget_hide(vol);
+}
+
+void
+on_buttonvalidervol_clicked            (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
