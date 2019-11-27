@@ -177,8 +177,64 @@ g_object_unref (store) ;
 
 
 /*
-void supprimeremployer()
+void supprimeremployer(char nom[], char prenom[] ,int j ,int m,int y ,char user[] ,char password[])
 {
+
+FILE *f;
+FILE *f1
+int role;
+int a=1,b=1;
+char user1[20] ; 
+char password1[20] ; 
+
+f=fopen("/home/ggmghoul/Desktop/agency-master/src/users.txt","r");
+if (f!=NULL)
+{
+while(fscanf(f," %s %s %d \n" ,user1,password1,&role)!=EOF)
+{
+a=strcmp(user,user1);
+   b=strcmp(password,password1);  
+if ((a!=0) && (b!=0))
+   { 
+      f1=fopen("/home/ggmghoul/Desktop/agency-master/src/empty.txt","a"); 
+    if(f1!=NULL)
+        {
+          fprintf(f1,"%s %s %d \n",user1,password1,role);
+          fclose(f1);
+        }
+    }
+}
+
+f=fopen("/home/ggmghoul/Desktop/agency-master/src/users.txt","w");
+if(f1!=NULL)
+        {
+          fprintf(f,"/0\n");
+          fclose(f);
+        }
+
+
+f1=fopen("/home/ggmghoul/Desktop/agency-master/src/empty.txt","r");
+if (f!=NULL)
+{
+while(fscanf(f1," %s %s %d \n" ,user1,password1,&role)!=EOF)
+{
+      f=fopen("/home/ggmghoul/Desktop/agency-master/src/users.txt","a"); 
+    if(f1!=NULL)
+        {
+          fprintf(f,"%s %s %d \n",user1,password1,role);
+          fclose(f);
+        }
+    }
+}
+
+   
+ 
+}
+f=fopen("/home/ggmghoul/Desktop/agency-master/src/empinfo.txt","a");
+if(f!=NULL)
+{fprintf(f,"%s %s %d/%d/%d %s %s \n",nom,prenom,j,m,y,user,password);
+fclose(f);
+}
 }
  
 
