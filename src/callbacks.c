@@ -472,7 +472,12 @@ void
 on_buttonCLocation_clicked             (GtkWidget       *objet_graphique,
                                         gpointer         user_data)
 {
+GtkWidget *loc ,*Client;
 
+Client=lookup_widget(objet_graphique,"ModeClient");
+loc=create_Location();
+gtk_widget_show(loc);
+gtk_widget_hide(Client);
 }
 
 
@@ -480,7 +485,12 @@ void
 on_buttonCHyber_clicked                (GtkWidget       *objet_graphique,
                                         gpointer         user_data)
 {
+GtkWidget *hyber ,*Client;
 
+Client=lookup_widget(objet_graphique,"ModeClient");
+hyber=create_Hybergement();
+gtk_widget_show(hyber);
+gtk_widget_hide(Client);
 }
 
 void
@@ -500,5 +510,31 @@ on_buttonvalidervol_clicked            (GtkWidget       *objet_graphique,
                                         gpointer         user_data)
 {
 
+}
+
+
+void
+on_buttonretourHC_clicked              (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *hyber ,*Client;
+
+hyber=lookup_widget(objet_graphique,"Hybergement");
+Client=create_ModeClient();
+gtk_widget_show(Client);
+gtk_widget_hide(hyber);
+}
+
+
+void
+on_buttonretourLC_clicked              (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *loc ,*Client;
+
+loc=lookup_widget(objet_graphique,"Location");
+Client=create_ModeClient();
+gtk_widget_show(Client);
+gtk_widget_hide(loc);
 }
 

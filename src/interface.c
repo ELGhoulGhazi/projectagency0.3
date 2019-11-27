@@ -774,9 +774,9 @@ create_Prestations (void)
   GtkWidget *image35;
   GtkWidget *buttonretourPE;
   GtkWidget *image12;
-  GtkWidget *buttonEHyber;
-  GtkWidget *buttonELocation;
   GtkWidget *buttonEvols;
+  GtkWidget *buttonELocation;
+  GtkWidget *buttonEHyber;
 
   Prestations = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (Prestations), _("Prestations"));
@@ -800,20 +800,20 @@ create_Prestations (void)
   gtk_widget_show (image12);
   gtk_container_add (GTK_CONTAINER (buttonretourPE), image12);
 
-  buttonEHyber = gtk_button_new_with_mnemonic (_("Hybergement"));
-  gtk_widget_show (buttonEHyber);
-  gtk_fixed_put (GTK_FIXED (fixed8), buttonEHyber, 552, 464);
-  gtk_widget_set_size_request (buttonEHyber, 144, 48);
+  buttonEvols = gtk_button_new_with_mnemonic (_("Vols"));
+  gtk_widget_show (buttonEvols);
+  gtk_fixed_put (GTK_FIXED (fixed8), buttonEvols, 143, 464);
+  gtk_widget_set_size_request (buttonEvols, 144, 48);
 
   buttonELocation = gtk_button_new_with_mnemonic (_("Location"));
   gtk_widget_show (buttonELocation);
   gtk_fixed_put (GTK_FIXED (fixed8), buttonELocation, 352, 464);
   gtk_widget_set_size_request (buttonELocation, 144, 48);
 
-  buttonEvols = gtk_button_new_with_mnemonic (_("Vols"));
-  gtk_widget_show (buttonEvols);
-  gtk_fixed_put (GTK_FIXED (fixed8), buttonEvols, 143, 464);
-  gtk_widget_set_size_request (buttonEvols, 144, 48);
+  buttonEHyber = gtk_button_new_with_mnemonic (_("Hybergement"));
+  gtk_widget_show (buttonEHyber);
+  gtk_fixed_put (GTK_FIXED (fixed8), buttonEHyber, 552, 464);
+  gtk_widget_set_size_request (buttonEHyber, 144, 48);
 
   g_signal_connect ((gpointer) buttonretourPE, "clicked",
                     G_CALLBACK (on_buttonretourPE_clicked),
@@ -825,9 +825,9 @@ create_Prestations (void)
   GLADE_HOOKUP_OBJECT (Prestations, image35, "image35");
   GLADE_HOOKUP_OBJECT (Prestations, buttonretourPE, "buttonretourPE");
   GLADE_HOOKUP_OBJECT (Prestations, image12, "image12");
-  GLADE_HOOKUP_OBJECT (Prestations, buttonEHyber, "buttonEHyber");
-  GLADE_HOOKUP_OBJECT (Prestations, buttonELocation, "buttonELocation");
   GLADE_HOOKUP_OBJECT (Prestations, buttonEvols, "buttonEvols");
+  GLADE_HOOKUP_OBJECT (Prestations, buttonELocation, "buttonELocation");
+  GLADE_HOOKUP_OBJECT (Prestations, buttonEHyber, "buttonEHyber");
 
   return Prestations;
 }
@@ -878,13 +878,13 @@ create_ModeClient (void)
   GtkWidget *label26;
   GtkWidget *buttondecoclient;
   GtkWidget *buttonCVols;
-  GtkWidget *buttonCLocation;
-  GtkWidget *buttonCHyber;
   GtkWidget *buttonPanier;
   GtkWidget *alignment13;
   GtkWidget *hbox13;
   GtkWidget *image30;
   GtkWidget *label95;
+  GtkWidget *buttonCLocation;
+  GtkWidget *buttonCHyber;
 
   ModeClient = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (ModeClient), _("Mode Clients"));
@@ -913,16 +913,6 @@ create_ModeClient (void)
   gtk_fixed_put (GTK_FIXED (fixed10), buttonCVols, 216, 616);
   gtk_widget_set_size_request (buttonCVols, 144, 49);
 
-  buttonCLocation = gtk_button_new_with_mnemonic (_("Location"));
-  gtk_widget_show (buttonCLocation);
-  gtk_fixed_put (GTK_FIXED (fixed10), buttonCLocation, 488, 616);
-  gtk_widget_set_size_request (buttonCLocation, 144, 49);
-
-  buttonCHyber = gtk_button_new_with_mnemonic (_("Hybergement"));
-  gtk_widget_show (buttonCHyber);
-  gtk_fixed_put (GTK_FIXED (fixed10), buttonCHyber, 760, 616);
-  gtk_widget_set_size_request (buttonCHyber, 144, 49);
-
   buttonPanier = gtk_button_new ();
   gtk_widget_show (buttonPanier);
   gtk_fixed_put (GTK_FIXED (fixed10), buttonPanier, 888, 56);
@@ -945,6 +935,16 @@ create_ModeClient (void)
   gtk_widget_show (label95);
   gtk_box_pack_start (GTK_BOX (hbox13), label95, FALSE, FALSE, 0);
 
+  buttonCLocation = gtk_button_new_with_mnemonic (_("Location"));
+  gtk_widget_show (buttonCLocation);
+  gtk_fixed_put (GTK_FIXED (fixed10), buttonCLocation, 488, 616);
+  gtk_widget_set_size_request (buttonCLocation, 144, 49);
+
+  buttonCHyber = gtk_button_new_with_mnemonic (_("Hybergement"));
+  gtk_widget_show (buttonCHyber);
+  gtk_fixed_put (GTK_FIXED (fixed10), buttonCHyber, 760, 616);
+  gtk_widget_set_size_request (buttonCHyber, 144, 49);
+
   g_signal_connect ((gpointer) buttondecoclient, "clicked",
                     G_CALLBACK (on_buttondecoclient_clicked),
                     NULL);
@@ -965,13 +965,13 @@ create_ModeClient (void)
   GLADE_HOOKUP_OBJECT (ModeClient, label26, "label26");
   GLADE_HOOKUP_OBJECT (ModeClient, buttondecoclient, "buttondecoclient");
   GLADE_HOOKUP_OBJECT (ModeClient, buttonCVols, "buttonCVols");
-  GLADE_HOOKUP_OBJECT (ModeClient, buttonCLocation, "buttonCLocation");
-  GLADE_HOOKUP_OBJECT (ModeClient, buttonCHyber, "buttonCHyber");
   GLADE_HOOKUP_OBJECT (ModeClient, buttonPanier, "buttonPanier");
   GLADE_HOOKUP_OBJECT (ModeClient, alignment13, "alignment13");
   GLADE_HOOKUP_OBJECT (ModeClient, hbox13, "hbox13");
   GLADE_HOOKUP_OBJECT (ModeClient, image30, "image30");
   GLADE_HOOKUP_OBJECT (ModeClient, label95, "label95");
+  GLADE_HOOKUP_OBJECT (ModeClient, buttonCLocation, "buttonCLocation");
+  GLADE_HOOKUP_OBJECT (ModeClient, buttonCHyber, "buttonCHyber");
 
   return ModeClient;
 }
@@ -1077,13 +1077,13 @@ create_Hybergement (void)
   GtkWidget *fixed13;
   GtkWidget *image26;
   GtkWidget *comboboxentryHyberpays;
-  GtkWidget *buttonretourHC;
-  GtkWidget *image15;
   GtkWidget *buttonvaliderhyber;
   GtkWidget *alignment11;
   GtkWidget *hbox11;
   GtkWidget *image27;
   GtkWidget *label93;
+  GtkWidget *buttonretourHC;
+  GtkWidget *image15;
 
   Hybergement = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (Hybergement), _("Hybergement"));
@@ -1101,15 +1101,6 @@ create_Hybergement (void)
   gtk_widget_show (comboboxentryHyberpays);
   gtk_fixed_put (GTK_FIXED (fixed13), comboboxentryHyberpays, 208, 240);
   gtk_widget_set_size_request (comboboxentryHyberpays, 206, 34);
-
-  buttonretourHC = gtk_button_new ();
-  gtk_widget_show (buttonretourHC);
-  gtk_fixed_put (GTK_FIXED (fixed13), buttonretourHC, 88, 144);
-  gtk_widget_set_size_request (buttonretourHC, 120, 48);
-
-  image15 = gtk_image_new_from_stock ("gtk-undo", GTK_ICON_SIZE_BUTTON);
-  gtk_widget_show (image15);
-  gtk_container_add (GTK_CONTAINER (buttonretourHC), image15);
 
   buttonvaliderhyber = gtk_button_new ();
   gtk_widget_show (buttonvaliderhyber);
@@ -1134,8 +1125,20 @@ create_Hybergement (void)
   gtk_widget_show (label93);
   gtk_box_pack_start (GTK_BOX (hbox11), label93, FALSE, FALSE, 0);
 
+  buttonretourHC = gtk_button_new ();
+  gtk_widget_show (buttonretourHC);
+  gtk_fixed_put (GTK_FIXED (fixed13), buttonretourHC, 88, 144);
+  gtk_widget_set_size_request (buttonretourHC, 120, 48);
+
+  image15 = gtk_image_new_from_stock ("gtk-undo", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image15);
+  gtk_container_add (GTK_CONTAINER (buttonretourHC), image15);
+
   g_signal_connect ((gpointer) buttonvaliderhyber, "clicked",
                     G_CALLBACK (on_buttonvalidervol_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonretourHC, "clicked",
+                    G_CALLBACK (on_buttonretourHC_clicked),
                     NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
@@ -1143,13 +1146,13 @@ create_Hybergement (void)
   GLADE_HOOKUP_OBJECT (Hybergement, fixed13, "fixed13");
   GLADE_HOOKUP_OBJECT (Hybergement, image26, "image26");
   GLADE_HOOKUP_OBJECT (Hybergement, comboboxentryHyberpays, "comboboxentryHyberpays");
-  GLADE_HOOKUP_OBJECT (Hybergement, buttonretourHC, "buttonretourHC");
-  GLADE_HOOKUP_OBJECT (Hybergement, image15, "image15");
   GLADE_HOOKUP_OBJECT (Hybergement, buttonvaliderhyber, "buttonvaliderhyber");
   GLADE_HOOKUP_OBJECT (Hybergement, alignment11, "alignment11");
   GLADE_HOOKUP_OBJECT (Hybergement, hbox11, "hbox11");
   GLADE_HOOKUP_OBJECT (Hybergement, image27, "image27");
   GLADE_HOOKUP_OBJECT (Hybergement, label93, "label93");
+  GLADE_HOOKUP_OBJECT (Hybergement, buttonretourHC, "buttonretourHC");
+  GLADE_HOOKUP_OBJECT (Hybergement, image15, "image15");
 
   return Hybergement;
 }
@@ -1160,13 +1163,13 @@ create_Location (void)
   GtkWidget *Location;
   GtkWidget *fixed14;
   GtkWidget *image28;
-  GtkWidget *buttonretourLC;
-  GtkWidget *image16;
   GtkWidget *buttonvaliderlocation;
   GtkWidget *alignment12;
   GtkWidget *hbox12;
   GtkWidget *image29;
   GtkWidget *label94;
+  GtkWidget *buttonretourLC;
+  GtkWidget *image16;
 
   Location = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (Location), _("Location"));
@@ -1179,15 +1182,6 @@ create_Location (void)
   gtk_widget_show (image28);
   gtk_fixed_put (GTK_FIXED (fixed14), image28, 0, 0);
   gtk_widget_set_size_request (image28, 1080, 808);
-
-  buttonretourLC = gtk_button_new ();
-  gtk_widget_show (buttonretourLC);
-  gtk_fixed_put (GTK_FIXED (fixed14), buttonretourLC, 88, 144);
-  gtk_widget_set_size_request (buttonretourLC, 120, 48);
-
-  image16 = gtk_image_new_from_stock ("gtk-undo", GTK_ICON_SIZE_BUTTON);
-  gtk_widget_show (image16);
-  gtk_container_add (GTK_CONTAINER (buttonretourLC), image16);
 
   buttonvaliderlocation = gtk_button_new ();
   gtk_widget_show (buttonvaliderlocation);
@@ -1212,21 +1206,33 @@ create_Location (void)
   gtk_widget_show (label94);
   gtk_box_pack_start (GTK_BOX (hbox12), label94, FALSE, FALSE, 0);
 
+  buttonretourLC = gtk_button_new ();
+  gtk_widget_show (buttonretourLC);
+  gtk_fixed_put (GTK_FIXED (fixed14), buttonretourLC, 88, 144);
+  gtk_widget_set_size_request (buttonretourLC, 120, 48);
+
+  image16 = gtk_image_new_from_stock ("gtk-undo", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image16);
+  gtk_container_add (GTK_CONTAINER (buttonretourLC), image16);
+
   g_signal_connect ((gpointer) buttonvaliderlocation, "clicked",
                     G_CALLBACK (on_buttonvalidervol_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonretourLC, "clicked",
+                    G_CALLBACK (on_buttonretourLC_clicked),
                     NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
   GLADE_HOOKUP_OBJECT_NO_REF (Location, Location, "Location");
   GLADE_HOOKUP_OBJECT (Location, fixed14, "fixed14");
   GLADE_HOOKUP_OBJECT (Location, image28, "image28");
-  GLADE_HOOKUP_OBJECT (Location, buttonretourLC, "buttonretourLC");
-  GLADE_HOOKUP_OBJECT (Location, image16, "image16");
   GLADE_HOOKUP_OBJECT (Location, buttonvaliderlocation, "buttonvaliderlocation");
   GLADE_HOOKUP_OBJECT (Location, alignment12, "alignment12");
   GLADE_HOOKUP_OBJECT (Location, hbox12, "hbox12");
   GLADE_HOOKUP_OBJECT (Location, image29, "image29");
   GLADE_HOOKUP_OBJECT (Location, label94, "label94");
+  GLADE_HOOKUP_OBJECT (Location, buttonretourLC, "buttonretourLC");
+  GLADE_HOOKUP_OBJECT (Location, image16, "image16");
 
   return Location;
 }

@@ -1651,18 +1651,18 @@
       </child>
 
       <child>
-	<widget class="GtkButton" id="buttonEHyber">
+	<widget class="GtkButton" id="buttonEvols">
 	  <property name="width_request">144</property>
 	  <property name="height_request">48</property>
 	  <property name="visible">True</property>
 	  <property name="can_focus">True</property>
-	  <property name="label" translatable="yes">Hybergement</property>
+	  <property name="label" translatable="yes">Vols</property>
 	  <property name="use_underline">True</property>
 	  <property name="relief">GTK_RELIEF_NORMAL</property>
 	  <property name="focus_on_click">True</property>
 	</widget>
 	<packing>
-	  <property name="x">552</property>
+	  <property name="x">143</property>
 	  <property name="y">464</property>
 	</packing>
       </child>
@@ -1685,18 +1685,18 @@
       </child>
 
       <child>
-	<widget class="GtkButton" id="buttonEvols">
+	<widget class="GtkButton" id="buttonEHyber">
 	  <property name="width_request">144</property>
 	  <property name="height_request">48</property>
 	  <property name="visible">True</property>
 	  <property name="can_focus">True</property>
-	  <property name="label" translatable="yes">Vols</property>
+	  <property name="label" translatable="yes">Hybergement</property>
 	  <property name="use_underline">True</property>
 	  <property name="relief">GTK_RELIEF_NORMAL</property>
 	  <property name="focus_on_click">True</property>
 	</widget>
 	<packing>
-	  <property name="x">143</property>
+	  <property name="x">552</property>
 	  <property name="y">464</property>
 	</packing>
       </child>
@@ -1856,42 +1856,6 @@
       </child>
 
       <child>
-	<widget class="GtkButton" id="buttonCLocation">
-	  <property name="width_request">144</property>
-	  <property name="height_request">49</property>
-	  <property name="visible">True</property>
-	  <property name="can_focus">True</property>
-	  <property name="label" translatable="yes">Location</property>
-	  <property name="use_underline">True</property>
-	  <property name="relief">GTK_RELIEF_NORMAL</property>
-	  <property name="focus_on_click">True</property>
-	  <signal name="clicked" handler="on_buttonCLocation_clicked" last_modification_time="Wed, 27 Nov 2019 11:36:25 GMT"/>
-	</widget>
-	<packing>
-	  <property name="x">488</property>
-	  <property name="y">616</property>
-	</packing>
-      </child>
-
-      <child>
-	<widget class="GtkButton" id="buttonCHyber">
-	  <property name="width_request">144</property>
-	  <property name="height_request">49</property>
-	  <property name="visible">True</property>
-	  <property name="can_focus">True</property>
-	  <property name="label" translatable="yes">Hybergement</property>
-	  <property name="use_underline">True</property>
-	  <property name="relief">GTK_RELIEF_NORMAL</property>
-	  <property name="focus_on_click">True</property>
-	  <signal name="clicked" handler="on_buttonCHyber_clicked" last_modification_time="Wed, 27 Nov 2019 11:36:30 GMT"/>
-	</widget>
-	<packing>
-	  <property name="x">760</property>
-	  <property name="y">616</property>
-	</packing>
-      </child>
-
-      <child>
 	<widget class="GtkButton" id="buttonPanier">
 	  <property name="width_request">144</property>
 	  <property name="height_request">48</property>
@@ -1967,6 +1931,42 @@
 	<packing>
 	  <property name="x">888</property>
 	  <property name="y">56</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkButton" id="buttonCLocation">
+	  <property name="width_request">144</property>
+	  <property name="height_request">49</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes">Location</property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_buttonCLocation_clicked" last_modification_time="Wed, 27 Nov 2019 11:36:25 GMT"/>
+	</widget>
+	<packing>
+	  <property name="x">488</property>
+	  <property name="y">616</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkButton" id="buttonCHyber">
+	  <property name="width_request">144</property>
+	  <property name="height_request">49</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes">Hybergement</property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_buttonCHyber_clicked" last_modification_time="Wed, 27 Nov 2019 11:36:30 GMT"/>
+	</widget>
+	<packing>
+	  <property name="x">760</property>
+	  <property name="y">616</property>
 	</packing>
       </child>
     </widget>
@@ -2204,33 +2204,6 @@
       </child>
 
       <child>
-	<widget class="GtkButton" id="buttonretourHC">
-	  <property name="width_request">120</property>
-	  <property name="height_request">48</property>
-	  <property name="visible">True</property>
-	  <property name="can_focus">True</property>
-	  <property name="relief">GTK_RELIEF_NORMAL</property>
-	  <property name="focus_on_click">True</property>
-
-	  <child>
-	    <widget class="GtkImage" id="image15">
-	      <property name="visible">True</property>
-	      <property name="stock">gtk-undo</property>
-	      <property name="icon_size">4</property>
-	      <property name="xalign">0.5</property>
-	      <property name="yalign">0.5</property>
-	      <property name="xpad">0</property>
-	      <property name="ypad">0</property>
-	    </widget>
-	  </child>
-	</widget>
-	<packing>
-	  <property name="x">88</property>
-	  <property name="y">144</property>
-	</packing>
-      </child>
-
-      <child>
 	<widget class="GtkButton" id="buttonvaliderhyber">
 	  <property name="width_request">152</property>
 	  <property name="height_request">48</property>
@@ -2309,6 +2282,34 @@
 	  <property name="y">27</property>
 	</packing>
       </child>
+
+      <child>
+	<widget class="GtkButton" id="buttonretourHC">
+	  <property name="width_request">120</property>
+	  <property name="height_request">48</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_buttonretourHC_clicked" last_modification_time="Wed, 27 Nov 2019 19:39:37 GMT"/>
+
+	  <child>
+	    <widget class="GtkImage" id="image15">
+	      <property name="visible">True</property>
+	      <property name="stock">gtk-undo</property>
+	      <property name="icon_size">4</property>
+	      <property name="xalign">0.5</property>
+	      <property name="yalign">0.5</property>
+	      <property name="xpad">0</property>
+	      <property name="ypad">0</property>
+	    </widget>
+	  </child>
+	</widget>
+	<packing>
+	  <property name="x">88</property>
+	  <property name="y">144</property>
+	</packing>
+      </child>
     </widget>
   </child>
 </widget>
@@ -2347,33 +2348,6 @@
 	<packing>
 	  <property name="x">0</property>
 	  <property name="y">0</property>
-	</packing>
-      </child>
-
-      <child>
-	<widget class="GtkButton" id="buttonretourLC">
-	  <property name="width_request">120</property>
-	  <property name="height_request">48</property>
-	  <property name="visible">True</property>
-	  <property name="can_focus">True</property>
-	  <property name="relief">GTK_RELIEF_NORMAL</property>
-	  <property name="focus_on_click">True</property>
-
-	  <child>
-	    <widget class="GtkImage" id="image16">
-	      <property name="visible">True</property>
-	      <property name="stock">gtk-undo</property>
-	      <property name="icon_size">4</property>
-	      <property name="xalign">0.5</property>
-	      <property name="yalign">0.5</property>
-	      <property name="xpad">0</property>
-	      <property name="ypad">0</property>
-	    </widget>
-	  </child>
-	</widget>
-	<packing>
-	  <property name="x">88</property>
-	  <property name="y">144</property>
 	</packing>
       </child>
 
@@ -2454,6 +2428,34 @@
 	<packing>
 	  <property name="x">784</property>
 	  <property name="y">40</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkButton" id="buttonretourLC">
+	  <property name="width_request">120</property>
+	  <property name="height_request">48</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_buttonretourLC_clicked" last_modification_time="Wed, 27 Nov 2019 19:39:59 GMT"/>
+
+	  <child>
+	    <widget class="GtkImage" id="image16">
+	      <property name="visible">True</property>
+	      <property name="stock">gtk-undo</property>
+	      <property name="icon_size">4</property>
+	      <property name="xalign">0.5</property>
+	      <property name="yalign">0.5</property>
+	      <property name="xpad">0</property>
+	      <property name="ypad">0</property>
+	    </widget>
+	  </child>
+	</widget>
+	<packing>
+	  <property name="x">88</property>
+	  <property name="y">144</property>
 	</packing>
       </child>
     </widget>

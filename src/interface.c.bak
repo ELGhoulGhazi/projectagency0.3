@@ -1241,18 +1241,19 @@ create_Inscription (void)
   GtkWidget *entryinscricin;
   GtkWidget *entryinscriptionuser;
   GtkWidget *entryinscriptionpass;
-  GtkWidget *label80;
-  GtkWidget *label79;
-  GtkWidget *label78;
-  GtkWidget *label77;
-  GtkWidget *label76;
-  GtkWidget *label82;
-  GtkWidget *buttoninscriconnect;
+  GtkWidget *image36;
   GtkWidget *buttonValiderinscri;
   GtkWidget *alignment8;
   GtkWidget *hbox8;
   GtkWidget *image17;
   GtkWidget *label81;
+  GtkWidget *label82;
+  GtkWidget *buttoninscriconnect;
+  GtkWidget *label79;
+  GtkWidget *label76;
+  GtkWidget *label77;
+  GtkWidget *label78;
+  GtkWidget *label80;
 
   Inscription = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (Inscription), _("Inscrivez-vous"));
@@ -1263,72 +1264,42 @@ create_Inscription (void)
 
   entryinscrinom = gtk_entry_new ();
   gtk_widget_show (entryinscrinom);
-  gtk_fixed_put (GTK_FIXED (fixed15), entryinscrinom, 248, 136);
-  gtk_widget_set_size_request (entryinscrinom, 172, 34);
+  gtk_fixed_put (GTK_FIXED (fixed15), entryinscrinom, 408, 270);
+  gtk_widget_set_size_request (entryinscrinom, 180, 36);
   gtk_entry_set_invisible_char (GTK_ENTRY (entryinscrinom), 8226);
 
   entryinscriprenom = gtk_entry_new ();
   gtk_widget_show (entryinscriprenom);
-  gtk_fixed_put (GTK_FIXED (fixed15), entryinscriprenom, 248, 176);
-  gtk_widget_set_size_request (entryinscriprenom, 172, 34);
+  gtk_fixed_put (GTK_FIXED (fixed15), entryinscriprenom, 408, 311);
+  gtk_widget_set_size_request (entryinscriprenom, 180, 36);
   gtk_entry_set_invisible_char (GTK_ENTRY (entryinscriprenom), 8226);
 
   entryinscricin = gtk_entry_new ();
   gtk_widget_show (entryinscricin);
-  gtk_fixed_put (GTK_FIXED (fixed15), entryinscricin, 248, 216);
-  gtk_widget_set_size_request (entryinscricin, 172, 34);
+  gtk_fixed_put (GTK_FIXED (fixed15), entryinscricin, 408, 353);
+  gtk_widget_set_size_request (entryinscricin, 180, 36);
   gtk_entry_set_invisible_char (GTK_ENTRY (entryinscricin), 8226);
 
   entryinscriptionuser = gtk_entry_new ();
   gtk_widget_show (entryinscriptionuser);
-  gtk_fixed_put (GTK_FIXED (fixed15), entryinscriptionuser, 248, 256);
-  gtk_widget_set_size_request (entryinscriptionuser, 172, 34);
+  gtk_fixed_put (GTK_FIXED (fixed15), entryinscriptionuser, 408, 396);
+  gtk_widget_set_size_request (entryinscriptionuser, 180, 36);
   gtk_entry_set_invisible_char (GTK_ENTRY (entryinscriptionuser), 8226);
 
   entryinscriptionpass = gtk_entry_new ();
   gtk_widget_show (entryinscriptionpass);
-  gtk_fixed_put (GTK_FIXED (fixed15), entryinscriptionpass, 248, 296);
-  gtk_widget_set_size_request (entryinscriptionpass, 172, 34);
+  gtk_fixed_put (GTK_FIXED (fixed15), entryinscriptionpass, 408, 439);
+  gtk_widget_set_size_request (entryinscriptionpass, 180, 36);
   gtk_entry_set_invisible_char (GTK_ENTRY (entryinscriptionpass), 8226);
 
-  label80 = gtk_label_new (_("Password :"));
-  gtk_widget_show (label80);
-  gtk_fixed_put (GTK_FIXED (fixed15), label80, 152, 296);
-  gtk_widget_set_size_request (label80, 88, 32);
-
-  label79 = gtk_label_new (_("User      :"));
-  gtk_widget_show (label79);
-  gtk_fixed_put (GTK_FIXED (fixed15), label79, 160, 256);
-  gtk_widget_set_size_request (label79, 88, 32);
-
-  label78 = gtk_label_new (_("CIN           : "));
-  gtk_widget_show (label78);
-  gtk_fixed_put (GTK_FIXED (fixed15), label78, 160, 216);
-  gtk_widget_set_size_request (label78, 88, 32);
-
-  label77 = gtk_label_new (_("Pr\303\251nom : "));
-  gtk_widget_show (label77);
-  gtk_fixed_put (GTK_FIXED (fixed15), label77, 160, 176);
-  gtk_widget_set_size_request (label77, 88, 32);
-
-  label76 = gtk_label_new (_("Nom : "));
-  gtk_widget_show (label76);
-  gtk_fixed_put (GTK_FIXED (fixed15), label76, 160, 136);
-  gtk_widget_set_size_request (label76, 88, 32);
-
-  label82 = gtk_label_new (_("Si vous avez d\303\251j\303\240 un compte \n                                             Connectez vous "));
-  gtk_widget_show (label82);
-  gtk_fixed_put (GTK_FIXED (fixed15), label82, 48, 432);
-  gtk_widget_set_size_request (label82, 416, 48);
-
-  buttoninscriconnect = gtk_button_new_with_mnemonic (_("Connecter"));
-  gtk_widget_show (buttoninscriconnect);
-  gtk_fixed_put (GTK_FIXED (fixed15), buttoninscriconnect, 440, 432);
-  gtk_widget_set_size_request (buttoninscriconnect, 160, 41);
+  image36 = create_pixmap (Inscription, "inscri.jpg");
+  gtk_widget_show (image36);
+  gtk_fixed_put (GTK_FIXED (fixed15), image36, 0, 0);
+  gtk_widget_set_size_request (image36, 1008, 749);
 
   buttonValiderinscri = gtk_button_new ();
   gtk_widget_show (buttonValiderinscri);
-  gtk_fixed_put (GTK_FIXED (fixed15), buttonValiderinscri, 264, 352);
+  gtk_fixed_put (GTK_FIXED (fixed15), buttonValiderinscri, 560, 488);
   gtk_widget_set_size_request (buttonValiderinscri, 144, 41);
 
   alignment8 = gtk_alignment_new (0.5, 0.5, 0, 0);
@@ -1347,11 +1318,46 @@ create_Inscription (void)
   gtk_widget_show (label81);
   gtk_box_pack_start (GTK_BOX (hbox8), label81, FALSE, FALSE, 0);
 
-  g_signal_connect ((gpointer) buttoninscriconnect, "clicked",
-                    G_CALLBACK (on_buttoninscriconnect_clicked),
-                    NULL);
+  label82 = gtk_label_new (_("Si vous avez d\303\251j\303\240 un compte \n                                             Connectez vous "));
+  gtk_widget_show (label82);
+  gtk_fixed_put (GTK_FIXED (fixed15), label82, 344, 656);
+  gtk_widget_set_size_request (label82, 416, 48);
+
+  buttoninscriconnect = gtk_button_new_with_mnemonic (_("Connecter"));
+  gtk_widget_show (buttoninscriconnect);
+  gtk_fixed_put (GTK_FIXED (fixed15), buttoninscriconnect, 771, 656);
+  gtk_widget_set_size_request (buttoninscriconnect, 170, 48);
+
+  label79 = gtk_label_new (_("User      :"));
+  gtk_widget_show (label79);
+  gtk_fixed_put (GTK_FIXED (fixed15), label79, 312, 399);
+  gtk_widget_set_size_request (label79, 88, 32);
+
+  label76 = gtk_label_new (_("Nom : "));
+  gtk_widget_show (label76);
+  gtk_fixed_put (GTK_FIXED (fixed15), label76, 320, 272);
+  gtk_widget_set_size_request (label76, 88, 32);
+
+  label77 = gtk_label_new (_("Pr\303\251nom  : "));
+  gtk_widget_show (label77);
+  gtk_fixed_put (GTK_FIXED (fixed15), label77, 307, 314);
+  gtk_widget_set_size_request (label77, 88, 32);
+
+  label78 = gtk_label_new (_("CIN        : "));
+  gtk_widget_show (label78);
+  gtk_fixed_put (GTK_FIXED (fixed15), label78, 312, 356);
+  gtk_widget_set_size_request (label78, 88, 32);
+
+  label80 = gtk_label_new (_("Password :"));
+  gtk_widget_show (label80);
+  gtk_fixed_put (GTK_FIXED (fixed15), label80, 301, 441);
+  gtk_widget_set_size_request (label80, 88, 32);
+
   g_signal_connect ((gpointer) buttonValiderinscri, "clicked",
                     G_CALLBACK (on_buttonValiderinscri_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttoninscriconnect, "clicked",
+                    G_CALLBACK (on_buttoninscriconnect_clicked),
                     NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
@@ -1362,18 +1368,19 @@ create_Inscription (void)
   GLADE_HOOKUP_OBJECT (Inscription, entryinscricin, "entryinscricin");
   GLADE_HOOKUP_OBJECT (Inscription, entryinscriptionuser, "entryinscriptionuser");
   GLADE_HOOKUP_OBJECT (Inscription, entryinscriptionpass, "entryinscriptionpass");
-  GLADE_HOOKUP_OBJECT (Inscription, label80, "label80");
-  GLADE_HOOKUP_OBJECT (Inscription, label79, "label79");
-  GLADE_HOOKUP_OBJECT (Inscription, label78, "label78");
-  GLADE_HOOKUP_OBJECT (Inscription, label77, "label77");
-  GLADE_HOOKUP_OBJECT (Inscription, label76, "label76");
-  GLADE_HOOKUP_OBJECT (Inscription, label82, "label82");
-  GLADE_HOOKUP_OBJECT (Inscription, buttoninscriconnect, "buttoninscriconnect");
+  GLADE_HOOKUP_OBJECT (Inscription, image36, "image36");
   GLADE_HOOKUP_OBJECT (Inscription, buttonValiderinscri, "buttonValiderinscri");
   GLADE_HOOKUP_OBJECT (Inscription, alignment8, "alignment8");
   GLADE_HOOKUP_OBJECT (Inscription, hbox8, "hbox8");
   GLADE_HOOKUP_OBJECT (Inscription, image17, "image17");
   GLADE_HOOKUP_OBJECT (Inscription, label81, "label81");
+  GLADE_HOOKUP_OBJECT (Inscription, label82, "label82");
+  GLADE_HOOKUP_OBJECT (Inscription, buttoninscriconnect, "buttoninscriconnect");
+  GLADE_HOOKUP_OBJECT (Inscription, label79, "label79");
+  GLADE_HOOKUP_OBJECT (Inscription, label76, "label76");
+  GLADE_HOOKUP_OBJECT (Inscription, label77, "label77");
+  GLADE_HOOKUP_OBJECT (Inscription, label78, "label78");
+  GLADE_HOOKUP_OBJECT (Inscription, label80, "label80");
 
   return Inscription;
 }
