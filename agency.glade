@@ -289,6 +289,60 @@
 	  <property name="y">536</property>
 	</packing>
       </child>
+
+      <child>
+	<widget class="GtkButton" id="buttonhyberV">
+	  <property name="width_request">144</property>
+	  <property name="height_request">49</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes">Hybergement</property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_buttonhyberV_clicked" last_modification_time="Wed, 27 Nov 2019 21:56:21 GMT"/>
+	</widget>
+	<packing>
+	  <property name="x">563</property>
+	  <property name="y">448</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkButton" id="buttonlocationV">
+	  <property name="width_request">144</property>
+	  <property name="height_request">49</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes">Location</property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_buttonlocationV_clicked" last_modification_time="Wed, 27 Nov 2019 21:56:32 GMT"/>
+	</widget>
+	<packing>
+	  <property name="x">365</property>
+	  <property name="y">448</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkButton" id="buttonvolsV">
+	  <property name="width_request">144</property>
+	  <property name="height_request">49</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes">Vols</property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_buttonvolsV_clicked" last_modification_time="Wed, 27 Nov 2019 21:56:44 GMT"/>
+	</widget>
+	<packing>
+	  <property name="x">152</property>
+	  <property name="y">448</property>
+	</packing>
+      </child>
     </widget>
   </child>
 </widget>
@@ -1834,60 +1888,6 @@
       </child>
 
       <child>
-	<widget class="GtkButton" id="buttonCVols">
-	  <property name="width_request">144</property>
-	  <property name="height_request">49</property>
-	  <property name="visible">True</property>
-	  <property name="can_focus">True</property>
-	  <property name="label" translatable="yes">Vols</property>
-	  <property name="use_underline">True</property>
-	  <property name="relief">GTK_RELIEF_NORMAL</property>
-	  <property name="focus_on_click">True</property>
-	  <signal name="clicked" handler="on_buttonCVols_clicked" last_modification_time="Wed, 27 Nov 2019 11:36:20 GMT"/>
-	</widget>
-	<packing>
-	  <property name="x">216</property>
-	  <property name="y">616</property>
-	</packing>
-      </child>
-
-      <child>
-	<widget class="GtkButton" id="buttonCLocation">
-	  <property name="width_request">144</property>
-	  <property name="height_request">49</property>
-	  <property name="visible">True</property>
-	  <property name="can_focus">True</property>
-	  <property name="label" translatable="yes">Location</property>
-	  <property name="use_underline">True</property>
-	  <property name="relief">GTK_RELIEF_NORMAL</property>
-	  <property name="focus_on_click">True</property>
-	  <signal name="clicked" handler="on_buttonCLocation_clicked" last_modification_time="Wed, 27 Nov 2019 11:36:25 GMT"/>
-	</widget>
-	<packing>
-	  <property name="x">488</property>
-	  <property name="y">616</property>
-	</packing>
-      </child>
-
-      <child>
-	<widget class="GtkButton" id="buttonCHyber">
-	  <property name="width_request">144</property>
-	  <property name="height_request">49</property>
-	  <property name="visible">True</property>
-	  <property name="can_focus">True</property>
-	  <property name="label" translatable="yes">Hybergement</property>
-	  <property name="use_underline">True</property>
-	  <property name="relief">GTK_RELIEF_NORMAL</property>
-	  <property name="focus_on_click">True</property>
-	  <signal name="clicked" handler="on_buttonCHyber_clicked" last_modification_time="Wed, 27 Nov 2019 11:36:30 GMT"/>
-	</widget>
-	<packing>
-	  <property name="x">760</property>
-	  <property name="y">616</property>
-	</packing>
-      </child>
-
-      <child>
 	<widget class="GtkButton" id="buttonrecC">
 	  <property name="width_request">144</property>
 	  <property name="height_request">49</property>
@@ -2122,6 +2122,60 @@
 	<packing>
 	  <property name="x">880</property>
 	  <property name="y">32</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkButton" id="buttonCVols">
+	  <property name="width_request">144</property>
+	  <property name="height_request">49</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes">Vols</property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_buttonCVols_clicked" last_modification_time="Wed, 27 Nov 2019 11:36:20 GMT"/>
+	</widget>
+	<packing>
+	  <property name="x">216</property>
+	  <property name="y">616</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkButton" id="buttonCLocation">
+	  <property name="width_request">144</property>
+	  <property name="height_request">49</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes">Location</property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_buttonCLocation_clicked" last_modification_time="Wed, 27 Nov 2019 11:36:25 GMT"/>
+	</widget>
+	<packing>
+	  <property name="x">488</property>
+	  <property name="y">616</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkButton" id="buttonCHyber">
+	  <property name="width_request">144</property>
+	  <property name="height_request">49</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes">Hybergement</property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_buttonCHyber_clicked" last_modification_time="Wed, 27 Nov 2019 11:36:30 GMT"/>
+	</widget>
+	<packing>
+	  <property name="x">760</property>
+	  <property name="y">616</property>
 	</packing>
       </child>
     </widget>
@@ -4097,6 +4151,318 @@
 	<packing>
 	  <property name="x">128</property>
 	  <property name="y">144</property>
+	</packing>
+      </child>
+    </widget>
+  </child>
+</widget>
+
+<widget class="GtkWindow" id="Volsvisiteur">
+  <property name="visible">True</property>
+  <property name="title" translatable="yes">Vols</property>
+  <property name="type">GTK_WINDOW_TOPLEVEL</property>
+  <property name="window_position">GTK_WIN_POS_NONE</property>
+  <property name="modal">False</property>
+  <property name="resizable">True</property>
+  <property name="destroy_with_parent">False</property>
+  <property name="decorated">True</property>
+  <property name="skip_taskbar_hint">False</property>
+  <property name="skip_pager_hint">False</property>
+  <property name="type_hint">GDK_WINDOW_TYPE_HINT_NORMAL</property>
+  <property name="gravity">GDK_GRAVITY_NORTH_WEST</property>
+  <property name="focus_on_map">True</property>
+  <property name="urgency_hint">False</property>
+
+  <child>
+    <widget class="GtkFixed" id="fixed26">
+      <property name="visible">True</property>
+
+      <child>
+	<widget class="GtkImage" id="image57">
+	  <property name="width_request">1072</property>
+	  <property name="height_request">800</property>
+	  <property name="visible">True</property>
+	  <property name="pixbuf">volclient.jpg</property>
+	  <property name="xalign">0.5</property>
+	  <property name="yalign">0.5</property>
+	  <property name="xpad">0</property>
+	  <property name="ypad">0</property>
+	</widget>
+	<packing>
+	  <property name="x">0</property>
+	  <property name="y">0</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkButton" id="buttonconnecterVV">
+	  <property name="width_request">144</property>
+	  <property name="height_request">49</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes">Connecter</property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_buttonconnecterVV_clicked" last_modification_time="Wed, 27 Nov 2019 21:52:35 GMT"/>
+	</widget>
+	<packing>
+	  <property name="x">912</property>
+	  <property name="y">23</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkButton" id="buttoninscriVV">
+	  <property name="width_request">144</property>
+	  <property name="height_request">49</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes">Inscrivez-Vous</property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_buttoninscriVV_clicked" last_modification_time="Wed, 27 Nov 2019 21:52:56 GMT"/>
+	</widget>
+	<packing>
+	  <property name="x">912</property>
+	  <property name="y">71</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkButton" id="buttonretourVV">
+	  <property name="width_request">120</property>
+	  <property name="height_request">48</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_buttonretourVV_clicked" last_modification_time="Wed, 27 Nov 2019 21:52:08 GMT"/>
+
+	  <child>
+	    <widget class="GtkImage" id="image62">
+	      <property name="visible">True</property>
+	      <property name="stock">gtk-undo</property>
+	      <property name="icon_size">4</property>
+	      <property name="xalign">0.5</property>
+	      <property name="yalign">0.5</property>
+	      <property name="xpad">0</property>
+	      <property name="ypad">0</property>
+	    </widget>
+	  </child>
+	</widget>
+	<packing>
+	  <property name="x">104</property>
+	  <property name="y">152</property>
+	</packing>
+      </child>
+    </widget>
+  </child>
+</widget>
+
+<widget class="GtkWindow" id="Hybergementvisiteur">
+  <property name="visible">True</property>
+  <property name="title" translatable="yes">Hybergement</property>
+  <property name="type">GTK_WINDOW_TOPLEVEL</property>
+  <property name="window_position">GTK_WIN_POS_NONE</property>
+  <property name="modal">False</property>
+  <property name="resizable">True</property>
+  <property name="destroy_with_parent">False</property>
+  <property name="decorated">True</property>
+  <property name="skip_taskbar_hint">False</property>
+  <property name="skip_pager_hint">False</property>
+  <property name="type_hint">GDK_WINDOW_TYPE_HINT_NORMAL</property>
+  <property name="gravity">GDK_GRAVITY_NORTH_WEST</property>
+  <property name="focus_on_map">True</property>
+  <property name="urgency_hint">False</property>
+
+  <child>
+    <widget class="GtkFixed" id="fixed27">
+      <property name="visible">True</property>
+
+      <child>
+	<widget class="GtkImage" id="image58">
+	  <property name="width_request">1056</property>
+	  <property name="height_request">792</property>
+	  <property name="visible">True</property>
+	  <property name="pixbuf">heberclient.jpg</property>
+	  <property name="xalign">0.409999996424</property>
+	  <property name="yalign">0.0799999982119</property>
+	  <property name="xpad">0</property>
+	  <property name="ypad">0</property>
+	</widget>
+	<packing>
+	  <property name="x">0</property>
+	  <property name="y">0</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkButton" id="buttoninscriVH">
+	  <property name="width_request">144</property>
+	  <property name="height_request">49</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes">Inscrivez-Vous</property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_buttoninscriVH_clicked" last_modification_time="Wed, 27 Nov 2019 21:53:26 GMT"/>
+	</widget>
+	<packing>
+	  <property name="x">912</property>
+	  <property name="y">71</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkButton" id="buttonconnecterVH">
+	  <property name="width_request">144</property>
+	  <property name="height_request">49</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes">Connecter</property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_buttonconnecterVH_clicked" last_modification_time="Wed, 27 Nov 2019 21:50:44 GMT"/>
+	</widget>
+	<packing>
+	  <property name="x">912</property>
+	  <property name="y">23</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkButton" id="buttonretourHV">
+	  <property name="width_request">120</property>
+	  <property name="height_request">48</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_buttonretourHV_clicked" last_modification_time="Wed, 27 Nov 2019 21:50:09 GMT"/>
+
+	  <child>
+	    <widget class="GtkImage" id="image61">
+	      <property name="visible">True</property>
+	      <property name="stock">gtk-undo</property>
+	      <property name="icon_size">4</property>
+	      <property name="xalign">0.5</property>
+	      <property name="yalign">0.5</property>
+	      <property name="xpad">0</property>
+	      <property name="ypad">0</property>
+	    </widget>
+	  </child>
+	</widget>
+	<packing>
+	  <property name="x">104</property>
+	  <property name="y">176</property>
+	</packing>
+      </child>
+    </widget>
+  </child>
+</widget>
+
+<widget class="GtkWindow" id="Locationvisiteur">
+  <property name="visible">True</property>
+  <property name="title" translatable="yes">Location</property>
+  <property name="type">GTK_WINDOW_TOPLEVEL</property>
+  <property name="window_position">GTK_WIN_POS_NONE</property>
+  <property name="modal">False</property>
+  <property name="resizable">True</property>
+  <property name="destroy_with_parent">False</property>
+  <property name="decorated">True</property>
+  <property name="skip_taskbar_hint">False</property>
+  <property name="skip_pager_hint">False</property>
+  <property name="type_hint">GDK_WINDOW_TYPE_HINT_NORMAL</property>
+  <property name="gravity">GDK_GRAVITY_NORTH_WEST</property>
+  <property name="focus_on_map">True</property>
+  <property name="urgency_hint">False</property>
+
+  <child>
+    <widget class="GtkFixed" id="fixed28">
+      <property name="visible">True</property>
+
+      <child>
+	<widget class="GtkImage" id="image59">
+	  <property name="width_request">1080</property>
+	  <property name="height_request">808</property>
+	  <property name="visible">True</property>
+	  <property name="pixbuf">locationclient.jpg</property>
+	  <property name="xalign">0.5</property>
+	  <property name="yalign">0.5</property>
+	  <property name="xpad">0</property>
+	  <property name="ypad">0</property>
+	</widget>
+	<packing>
+	  <property name="x">0</property>
+	  <property name="y">0</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkButton" id="buttonretourLV">
+	  <property name="width_request">120</property>
+	  <property name="height_request">48</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_buttonretourLV_clicked" last_modification_time="Wed, 27 Nov 2019 21:41:50 GMT"/>
+
+	  <child>
+	    <widget class="GtkImage" id="image60">
+	      <property name="visible">True</property>
+	      <property name="stock">gtk-undo</property>
+	      <property name="icon_size">4</property>
+	      <property name="xalign">0.5</property>
+	      <property name="yalign">0.5</property>
+	      <property name="xpad">0</property>
+	      <property name="ypad">0</property>
+	    </widget>
+	  </child>
+	</widget>
+	<packing>
+	  <property name="x">96</property>
+	  <property name="y">152</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkButton" id="buttonconnecterVL">
+	  <property name="width_request">144</property>
+	  <property name="height_request">49</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes">Connecter</property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_buttonconnecterVL_clicked" last_modification_time="Wed, 27 Nov 2019 21:48:01 GMT"/>
+	</widget>
+	<packing>
+	  <property name="x">912</property>
+	  <property name="y">23</property>
+	</packing>
+      </child>
+
+      <child>
+	<widget class="GtkButton" id="buttoninscriVL">
+	  <property name="width_request">144</property>
+	  <property name="height_request">49</property>
+	  <property name="visible">True</property>
+	  <property name="can_focus">True</property>
+	  <property name="label" translatable="yes">Inscrivez-Vous</property>
+	  <property name="use_underline">True</property>
+	  <property name="relief">GTK_RELIEF_NORMAL</property>
+	  <property name="focus_on_click">True</property>
+	  <signal name="clicked" handler="on_buttoninscriVL_clicked" last_modification_time="Wed, 27 Nov 2019 21:48:18 GMT"/>
+	</widget>
+	<packing>
+	  <property name="x">912</property>
+	  <property name="y">71</property>
 	</packing>
       </child>
     </widget>

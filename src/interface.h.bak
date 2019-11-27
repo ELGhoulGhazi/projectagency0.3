@@ -26,3 +26,6 @@ GtkWidget* create_contacter (void);
 GtkWidget* create_reclamer (void);
 GtkWidget* create_messageE (void);
 GtkWidget* create_reclamationE (void);
+GtkWidget* create_Volsvisiteur (void);
+GtkWidget* create_Hybergementvisiteur (void);
+GtkWidget* create_Locationvisiteur (void);

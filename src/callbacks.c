@@ -505,12 +505,7 @@ gtk_widget_show(Client);
 gtk_widget_hide(vol);
 }
 
-void
-on_buttonvalidervol_clicked            (GtkWidget       *objet_graphique,
-                                        gpointer         user_data)
-{
 
-}
 
 
 void
@@ -776,5 +771,174 @@ rec=lookup_widget(objet_graphique,"reclamationE");
 emp=create_ModeEmploye();
 gtk_widget_show(emp);
 gtk_widget_hide(rec);
+}
+
+
+void
+on_buttonretourLV_clicked              (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *locv ,*visiteur;
+
+locv=lookup_widget(objet_graphique,"Locationvisiteur");
+visiteur=create_ModeVisiteur();
+gtk_widget_show(visiteur);
+gtk_widget_hide(locv);
+
+}
+
+
+void
+on_buttonconnecterVL_clicked           (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *Home ,*locv ;
+
+locv=lookup_widget(objet_graphique,"Locationvisiteur");
+Home=create_Home(); 
+gtk_widget_show(Home);
+gtk_widget_hide(locv);
+}
+
+
+void
+on_buttoninscriVL_clicked              (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *inscri ,*locv ;
+
+locv=lookup_widget(objet_graphique,"Locationvisiteur");
+inscri=create_Inscription(); 
+gtk_widget_show(inscri);
+gtk_widget_hide(locv);
+
+}
+
+
+void
+on_buttonhyberV_clicked                (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *hyberv ,*visiteur;
+
+visiteur=lookup_widget(objet_graphique,"ModeVisiteur");
+hyberv=create_Hybergementvisiteur();
+gtk_widget_show(hyberv);
+gtk_widget_hide(visiteur);
+}
+
+
+void
+on_buttonlocationV_clicked             (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *locv ,*visiteur;
+
+visiteur=lookup_widget(objet_graphique,"ModeVisiteur");
+locv=create_Locationvisiteur();
+gtk_widget_show(locv);
+gtk_widget_hide(visiteur);
+}
+
+
+void
+on_buttonvolsV_clicked                 (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *volv ,*visiteur;
+
+visiteur=lookup_widget(objet_graphique,"ModeVisiteur");
+volv=create_Volsvisiteur();
+gtk_widget_show(volv);
+gtk_widget_hide(visiteur);
+}
+
+
+void
+on_buttonconnecterVV_clicked           (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *Home ,*volv ;
+
+volv=lookup_widget(objet_graphique,"Volsvisiteur");
+Home=create_Home(); 
+gtk_widget_show(Home);
+gtk_widget_hide(volv);
+
+}
+
+
+void
+on_buttoninscriVV_clicked              (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *inscri ,*volv ;
+
+volv=lookup_widget(objet_graphique,"Volsvisiteur");
+inscri=create_Inscription(); 
+gtk_widget_show(inscri);
+gtk_widget_hide(volv);
+
+}
+
+
+void
+on_buttonretourVV_clicked              (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *volv ,*visiteur;
+
+volv=lookup_widget(objet_graphique,"Volsvisiteur");
+visiteur=create_ModeVisiteur();
+gtk_widget_show(visiteur);
+gtk_widget_hide(volv);
+}
+
+
+void
+on_buttoninscriVH_clicked              (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *inscri ,*hyberv ;
+
+hyberv=lookup_widget(objet_graphique,"Hybergementvisiteur");
+inscri=create_Inscription(); 
+gtk_widget_show(inscri);
+gtk_widget_hide(hyberv);
+
+}
+
+
+void
+on_buttonconnecterVH_clicked           (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *Home ,*hyberv ;
+
+hyberv=lookup_widget(objet_graphique,"Hybergementvisiteur");
+Home=create_Home(); 
+gtk_widget_show(Home);
+gtk_widget_hide(hyberv);
+
+}
+
+
+void
+on_buttonretourHV_clicked              (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *hyberv ,*visiteur;
+
+hyberv=lookup_widget(objet_graphique,"Hybergementvisiteur");
+visiteur=create_ModeVisiteur();
+gtk_widget_show(visiteur);
+gtk_widget_hide(hyberv);
+}
+
+void
+on_buttonvalidervol_clicked            (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+
 }
 

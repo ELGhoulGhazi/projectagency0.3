@@ -118,6 +118,9 @@ create_ModeVisiteur (void)
   GtkWidget *label27;
   GtkWidget *label28;
   GtkWidget *buttonInscriV;
+  GtkWidget *buttonhyberV;
+  GtkWidget *buttonlocationV;
+  GtkWidget *buttonvolsV;
 
   ModeVisiteur = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (ModeVisiteur), _("Mode Visiteur"));
@@ -152,11 +155,35 @@ create_ModeVisiteur (void)
   gtk_fixed_put (GTK_FIXED (fixed11), buttonInscriV, 608, 536);
   gtk_widget_set_size_request (buttonInscriV, 136, 40);
 
+  buttonhyberV = gtk_button_new_with_mnemonic (_("Hybergement"));
+  gtk_widget_show (buttonhyberV);
+  gtk_fixed_put (GTK_FIXED (fixed11), buttonhyberV, 563, 448);
+  gtk_widget_set_size_request (buttonhyberV, 144, 49);
+
+  buttonlocationV = gtk_button_new_with_mnemonic (_("Location"));
+  gtk_widget_show (buttonlocationV);
+  gtk_fixed_put (GTK_FIXED (fixed11), buttonlocationV, 365, 448);
+  gtk_widget_set_size_request (buttonlocationV, 144, 49);
+
+  buttonvolsV = gtk_button_new_with_mnemonic (_("Vols"));
+  gtk_widget_show (buttonvolsV);
+  gtk_fixed_put (GTK_FIXED (fixed11), buttonvolsV, 152, 448);
+  gtk_widget_set_size_request (buttonvolsV, 144, 49);
+
   g_signal_connect ((gpointer) buttonConnect, "clicked",
                     G_CALLBACK (on_buttonConnect_clicked),
                     NULL);
   g_signal_connect ((gpointer) buttonInscriV, "clicked",
                     G_CALLBACK (on_buttonInscriV_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonhyberV, "clicked",
+                    G_CALLBACK (on_buttonhyberV_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonlocationV, "clicked",
+                    G_CALLBACK (on_buttonlocationV_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonvolsV, "clicked",
+                    G_CALLBACK (on_buttonvolsV_clicked),
                     NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
@@ -167,6 +194,9 @@ create_ModeVisiteur (void)
   GLADE_HOOKUP_OBJECT (ModeVisiteur, label27, "label27");
   GLADE_HOOKUP_OBJECT (ModeVisiteur, label28, "label28");
   GLADE_HOOKUP_OBJECT (ModeVisiteur, buttonInscriV, "buttonInscriV");
+  GLADE_HOOKUP_OBJECT (ModeVisiteur, buttonhyberV, "buttonhyberV");
+  GLADE_HOOKUP_OBJECT (ModeVisiteur, buttonlocationV, "buttonlocationV");
+  GLADE_HOOKUP_OBJECT (ModeVisiteur, buttonvolsV, "buttonvolsV");
 
   return ModeVisiteur;
 }
@@ -892,9 +922,6 @@ create_ModeClient (void)
   GtkWidget *image21;
   GtkWidget *label26;
   GtkWidget *buttondecoclient;
-  GtkWidget *buttonCVols;
-  GtkWidget *buttonCLocation;
-  GtkWidget *buttonCHyber;
   GtkWidget *buttonrecC;
   GtkWidget *alignment14;
   GtkWidget *hbox14;
@@ -910,6 +937,9 @@ create_ModeClient (void)
   GtkWidget *hbox15;
   GtkWidget *image46;
   GtkWidget *label97;
+  GtkWidget *buttonCVols;
+  GtkWidget *buttonCLocation;
+  GtkWidget *buttonCHyber;
 
   ModeClient = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (ModeClient), _("Mode Clients"));
@@ -933,21 +963,6 @@ create_ModeClient (void)
   gtk_widget_show (buttondecoclient);
   gtk_fixed_put (GTK_FIXED (fixed10), buttondecoclient, 0, 755);
   gtk_widget_set_size_request (buttondecoclient, 196, 51);
-
-  buttonCVols = gtk_button_new_with_mnemonic (_("Vols"));
-  gtk_widget_show (buttonCVols);
-  gtk_fixed_put (GTK_FIXED (fixed10), buttonCVols, 216, 616);
-  gtk_widget_set_size_request (buttonCVols, 144, 49);
-
-  buttonCLocation = gtk_button_new_with_mnemonic (_("Location"));
-  gtk_widget_show (buttonCLocation);
-  gtk_fixed_put (GTK_FIXED (fixed10), buttonCLocation, 488, 616);
-  gtk_widget_set_size_request (buttonCLocation, 144, 49);
-
-  buttonCHyber = gtk_button_new_with_mnemonic (_("Hybergement"));
-  gtk_widget_show (buttonCHyber);
-  gtk_fixed_put (GTK_FIXED (fixed10), buttonCHyber, 760, 616);
-  gtk_widget_set_size_request (buttonCHyber, 144, 49);
 
   buttonrecC = gtk_button_new ();
   gtk_widget_show (buttonrecC);
@@ -1016,8 +1031,29 @@ create_ModeClient (void)
   gtk_widget_show (label97);
   gtk_box_pack_start (GTK_BOX (hbox15), label97, FALSE, FALSE, 0);
 
+  buttonCVols = gtk_button_new_with_mnemonic (_("Vols"));
+  gtk_widget_show (buttonCVols);
+  gtk_fixed_put (GTK_FIXED (fixed10), buttonCVols, 216, 616);
+  gtk_widget_set_size_request (buttonCVols, 144, 49);
+
+  buttonCLocation = gtk_button_new_with_mnemonic (_("Location"));
+  gtk_widget_show (buttonCLocation);
+  gtk_fixed_put (GTK_FIXED (fixed10), buttonCLocation, 488, 616);
+  gtk_widget_set_size_request (buttonCLocation, 144, 49);
+
+  buttonCHyber = gtk_button_new_with_mnemonic (_("Hybergement"));
+  gtk_widget_show (buttonCHyber);
+  gtk_fixed_put (GTK_FIXED (fixed10), buttonCHyber, 760, 616);
+  gtk_widget_set_size_request (buttonCHyber, 144, 49);
+
   g_signal_connect ((gpointer) buttondecoclient, "clicked",
                     G_CALLBACK (on_buttondecoclient_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonrecC, "clicked",
+                    G_CALLBACK (on_buttonrecC_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonmsgC, "clicked",
+                    G_CALLBACK (on_buttonmsgC_clicked),
                     NULL);
   g_signal_connect ((gpointer) buttonCVols, "clicked",
                     G_CALLBACK (on_buttonCVols_clicked),
@@ -1028,12 +1064,6 @@ create_ModeClient (void)
   g_signal_connect ((gpointer) buttonCHyber, "clicked",
                     G_CALLBACK (on_buttonCHyber_clicked),
                     NULL);
-  g_signal_connect ((gpointer) buttonrecC, "clicked",
-                    G_CALLBACK (on_buttonrecC_clicked),
-                    NULL);
-  g_signal_connect ((gpointer) buttonmsgC, "clicked",
-                    G_CALLBACK (on_buttonmsgC_clicked),
-                    NULL);
 
   /* Store pointers to all widgets, for use by lookup_widget(). */
   GLADE_HOOKUP_OBJECT_NO_REF (ModeClient, ModeClient, "ModeClient");
@@ -1041,9 +1071,6 @@ create_ModeClient (void)
   GLADE_HOOKUP_OBJECT (ModeClient, image21, "image21");
   GLADE_HOOKUP_OBJECT (ModeClient, label26, "label26");
   GLADE_HOOKUP_OBJECT (ModeClient, buttondecoclient, "buttondecoclient");
-  GLADE_HOOKUP_OBJECT (ModeClient, buttonCVols, "buttonCVols");
-  GLADE_HOOKUP_OBJECT (ModeClient, buttonCLocation, "buttonCLocation");
-  GLADE_HOOKUP_OBJECT (ModeClient, buttonCHyber, "buttonCHyber");
   GLADE_HOOKUP_OBJECT (ModeClient, buttonrecC, "buttonrecC");
   GLADE_HOOKUP_OBJECT (ModeClient, alignment14, "alignment14");
   GLADE_HOOKUP_OBJECT (ModeClient, hbox14, "hbox14");
@@ -1059,6 +1086,9 @@ create_ModeClient (void)
   GLADE_HOOKUP_OBJECT (ModeClient, hbox15, "hbox15");
   GLADE_HOOKUP_OBJECT (ModeClient, image46, "image46");
   GLADE_HOOKUP_OBJECT (ModeClient, label97, "label97");
+  GLADE_HOOKUP_OBJECT (ModeClient, buttonCVols, "buttonCVols");
+  GLADE_HOOKUP_OBJECT (ModeClient, buttonCLocation, "buttonCLocation");
+  GLADE_HOOKUP_OBJECT (ModeClient, buttonCHyber, "buttonCHyber");
 
   return ModeClient;
 }
@@ -2058,5 +2088,198 @@ create_reclamationE (void)
   GLADE_HOOKUP_OBJECT (reclamationE, image56, "image56");
 
   return reclamationE;
+}
+
+GtkWidget*
+create_Volsvisiteur (void)
+{
+  GtkWidget *Volsvisiteur;
+  GtkWidget *fixed26;
+  GtkWidget *image57;
+  GtkWidget *buttonconnecterVV;
+  GtkWidget *buttoninscriVV;
+  GtkWidget *buttonretourVV;
+  GtkWidget *image62;
+
+  Volsvisiteur = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+  gtk_window_set_title (GTK_WINDOW (Volsvisiteur), _("Vols"));
+
+  fixed26 = gtk_fixed_new ();
+  gtk_widget_show (fixed26);
+  gtk_container_add (GTK_CONTAINER (Volsvisiteur), fixed26);
+
+  image57 = create_pixmap (Volsvisiteur, "volclient.jpg");
+  gtk_widget_show (image57);
+  gtk_fixed_put (GTK_FIXED (fixed26), image57, 0, 0);
+  gtk_widget_set_size_request (image57, 1072, 800);
+
+  buttonconnecterVV = gtk_button_new_with_mnemonic (_("Connecter"));
+  gtk_widget_show (buttonconnecterVV);
+  gtk_fixed_put (GTK_FIXED (fixed26), buttonconnecterVV, 912, 23);
+  gtk_widget_set_size_request (buttonconnecterVV, 144, 49);
+
+  buttoninscriVV = gtk_button_new_with_mnemonic (_("Inscrivez-Vous"));
+  gtk_widget_show (buttoninscriVV);
+  gtk_fixed_put (GTK_FIXED (fixed26), buttoninscriVV, 912, 71);
+  gtk_widget_set_size_request (buttoninscriVV, 144, 49);
+
+  buttonretourVV = gtk_button_new ();
+  gtk_widget_show (buttonretourVV);
+  gtk_fixed_put (GTK_FIXED (fixed26), buttonretourVV, 104, 152);
+  gtk_widget_set_size_request (buttonretourVV, 120, 48);
+
+  image62 = gtk_image_new_from_stock ("gtk-undo", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image62);
+  gtk_container_add (GTK_CONTAINER (buttonretourVV), image62);
+
+  g_signal_connect ((gpointer) buttonconnecterVV, "clicked",
+                    G_CALLBACK (on_buttonconnecterVV_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttoninscriVV, "clicked",
+                    G_CALLBACK (on_buttoninscriVV_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonretourVV, "clicked",
+                    G_CALLBACK (on_buttonretourVV_clicked),
+                    NULL);
+
+  /* Store pointers to all widgets, for use by lookup_widget(). */
+  GLADE_HOOKUP_OBJECT_NO_REF (Volsvisiteur, Volsvisiteur, "Volsvisiteur");
+  GLADE_HOOKUP_OBJECT (Volsvisiteur, fixed26, "fixed26");
+  GLADE_HOOKUP_OBJECT (Volsvisiteur, image57, "image57");
+  GLADE_HOOKUP_OBJECT (Volsvisiteur, buttonconnecterVV, "buttonconnecterVV");
+  GLADE_HOOKUP_OBJECT (Volsvisiteur, buttoninscriVV, "buttoninscriVV");
+  GLADE_HOOKUP_OBJECT (Volsvisiteur, buttonretourVV, "buttonretourVV");
+  GLADE_HOOKUP_OBJECT (Volsvisiteur, image62, "image62");
+
+  return Volsvisiteur;
+}
+
+GtkWidget*
+create_Hybergementvisiteur (void)
+{
+  GtkWidget *Hybergementvisiteur;
+  GtkWidget *fixed27;
+  GtkWidget *image58;
+  GtkWidget *buttoninscriVH;
+  GtkWidget *buttonconnecterVH;
+  GtkWidget *buttonretourHV;
+  GtkWidget *image61;
+
+  Hybergementvisiteur = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+  gtk_window_set_title (GTK_WINDOW (Hybergementvisiteur), _("Hybergement"));
+
+  fixed27 = gtk_fixed_new ();
+  gtk_widget_show (fixed27);
+  gtk_container_add (GTK_CONTAINER (Hybergementvisiteur), fixed27);
+
+  image58 = create_pixmap (Hybergementvisiteur, "heberclient.jpg");
+  gtk_widget_show (image58);
+  gtk_fixed_put (GTK_FIXED (fixed27), image58, 0, 0);
+  gtk_widget_set_size_request (image58, 1056, 792);
+  gtk_misc_set_alignment (GTK_MISC (image58), 0.41, 0.08);
+
+  buttoninscriVH = gtk_button_new_with_mnemonic (_("Inscrivez-Vous"));
+  gtk_widget_show (buttoninscriVH);
+  gtk_fixed_put (GTK_FIXED (fixed27), buttoninscriVH, 912, 71);
+  gtk_widget_set_size_request (buttoninscriVH, 144, 49);
+
+  buttonconnecterVH = gtk_button_new_with_mnemonic (_("Connecter"));
+  gtk_widget_show (buttonconnecterVH);
+  gtk_fixed_put (GTK_FIXED (fixed27), buttonconnecterVH, 912, 23);
+  gtk_widget_set_size_request (buttonconnecterVH, 144, 49);
+
+  buttonretourHV = gtk_button_new ();
+  gtk_widget_show (buttonretourHV);
+  gtk_fixed_put (GTK_FIXED (fixed27), buttonretourHV, 104, 176);
+  gtk_widget_set_size_request (buttonretourHV, 120, 48);
+
+  image61 = gtk_image_new_from_stock ("gtk-undo", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image61);
+  gtk_container_add (GTK_CONTAINER (buttonretourHV), image61);
+
+  g_signal_connect ((gpointer) buttoninscriVH, "clicked",
+                    G_CALLBACK (on_buttoninscriVH_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonconnecterVH, "clicked",
+                    G_CALLBACK (on_buttonconnecterVH_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonretourHV, "clicked",
+                    G_CALLBACK (on_buttonretourHV_clicked),
+                    NULL);
+
+  /* Store pointers to all widgets, for use by lookup_widget(). */
+  GLADE_HOOKUP_OBJECT_NO_REF (Hybergementvisiteur, Hybergementvisiteur, "Hybergementvisiteur");
+  GLADE_HOOKUP_OBJECT (Hybergementvisiteur, fixed27, "fixed27");
+  GLADE_HOOKUP_OBJECT (Hybergementvisiteur, image58, "image58");
+  GLADE_HOOKUP_OBJECT (Hybergementvisiteur, buttoninscriVH, "buttoninscriVH");
+  GLADE_HOOKUP_OBJECT (Hybergementvisiteur, buttonconnecterVH, "buttonconnecterVH");
+  GLADE_HOOKUP_OBJECT (Hybergementvisiteur, buttonretourHV, "buttonretourHV");
+  GLADE_HOOKUP_OBJECT (Hybergementvisiteur, image61, "image61");
+
+  return Hybergementvisiteur;
+}
+
+GtkWidget*
+create_Locationvisiteur (void)
+{
+  GtkWidget *Locationvisiteur;
+  GtkWidget *fixed28;
+  GtkWidget *image59;
+  GtkWidget *buttonretourLV;
+  GtkWidget *image60;
+  GtkWidget *buttonconnecterVL;
+  GtkWidget *buttoninscriVL;
+
+  Locationvisiteur = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+  gtk_window_set_title (GTK_WINDOW (Locationvisiteur), _("Location"));
+
+  fixed28 = gtk_fixed_new ();
+  gtk_widget_show (fixed28);
+  gtk_container_add (GTK_CONTAINER (Locationvisiteur), fixed28);
+
+  image59 = create_pixmap (Locationvisiteur, "locationclient.jpg");
+  gtk_widget_show (image59);
+  gtk_fixed_put (GTK_FIXED (fixed28), image59, 0, 0);
+  gtk_widget_set_size_request (image59, 1080, 808);
+
+  buttonretourLV = gtk_button_new ();
+  gtk_widget_show (buttonretourLV);
+  gtk_fixed_put (GTK_FIXED (fixed28), buttonretourLV, 96, 152);
+  gtk_widget_set_size_request (buttonretourLV, 120, 48);
+
+  image60 = gtk_image_new_from_stock ("gtk-undo", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image60);
+  gtk_container_add (GTK_CONTAINER (buttonretourLV), image60);
+
+  buttonconnecterVL = gtk_button_new_with_mnemonic (_("Connecter"));
+  gtk_widget_show (buttonconnecterVL);
+  gtk_fixed_put (GTK_FIXED (fixed28), buttonconnecterVL, 912, 23);
+  gtk_widget_set_size_request (buttonconnecterVL, 144, 49);
+
+  buttoninscriVL = gtk_button_new_with_mnemonic (_("Inscrivez-Vous"));
+  gtk_widget_show (buttoninscriVL);
+  gtk_fixed_put (GTK_FIXED (fixed28), buttoninscriVL, 912, 71);
+  gtk_widget_set_size_request (buttoninscriVL, 144, 49);
+
+  g_signal_connect ((gpointer) buttonretourLV, "clicked",
+                    G_CALLBACK (on_buttonretourLV_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttonconnecterVL, "clicked",
+                    G_CALLBACK (on_buttonconnecterVL_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) buttoninscriVL, "clicked",
+                    G_CALLBACK (on_buttoninscriVL_clicked),
+                    NULL);
+
+  /* Store pointers to all widgets, for use by lookup_widget(). */
+  GLADE_HOOKUP_OBJECT_NO_REF (Locationvisiteur, Locationvisiteur, "Locationvisiteur");
+  GLADE_HOOKUP_OBJECT (Locationvisiteur, fixed28, "fixed28");
+  GLADE_HOOKUP_OBJECT (Locationvisiteur, image59, "image59");
+  GLADE_HOOKUP_OBJECT (Locationvisiteur, buttonretourLV, "buttonretourLV");
+  GLADE_HOOKUP_OBJECT (Locationvisiteur, image60, "image60");
+  GLADE_HOOKUP_OBJECT (Locationvisiteur, buttonconnecterVL, "buttonconnecterVL");
+  GLADE_HOOKUP_OBJECT (Locationvisiteur, buttoninscriVL, "buttoninscriVL");
+
+  return Locationvisiteur;
 }
 
