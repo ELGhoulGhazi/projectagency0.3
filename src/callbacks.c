@@ -73,8 +73,8 @@ GClients=create_GestionAClient();
 gtk_widget_show(GClients);
 gtk_widget_hide(Admin);
 
-//treeview=lookup_widget(GClients,"treeviewclient");
-//afficherclient(treeview) ; 
+treeview=lookup_widget(GClients,"treeviewAclient");
+afficherclient(treeview) ; 
 
 }
 

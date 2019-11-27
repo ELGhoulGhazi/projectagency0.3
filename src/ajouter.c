@@ -118,7 +118,7 @@ g_object_unref (store) ;
 }
 
 
-/*
+
 void afficherclient (GtkTreeView *liste)
 {
 GtkCellRenderer *render ;
@@ -184,7 +184,7 @@ g_object_unref (store) ;
 }
 
 
-
+/*
 void supprimeremployer(char nom[], char prenom[] ,int j ,int m,int y ,char user[] ,char password[])
 {
 
