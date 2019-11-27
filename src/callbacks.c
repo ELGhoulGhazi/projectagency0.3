@@ -270,12 +270,15 @@ void
 on_buttonEGC_clicked                   (GtkWidget       *objet_graphique,
                                         gpointer         user_data)
 {
-GtkWidget *GestionClient ,*Emp;
+GtkWidget *GestionClient ,*Emp ,*treeview;
 
 Emp=lookup_widget(objet_graphique,"ModeEmploye");
 GestionClient=create_GestionEClient();
 gtk_widget_show(GestionClient);
 gtk_widget_hide(Emp);
+
+treeview=lookup_widget(GestionClient,"treeviewEclient");
+afficherclient(treeview) ; 
 }
 
 
