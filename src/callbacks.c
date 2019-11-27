@@ -538,3 +538,85 @@ gtk_widget_show(Client);
 gtk_widget_hide(loc);
 }
 
+
+void
+on_buttonEvols_clicked                 (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *evol ,*pres;
+
+pres=lookup_widget(objet_graphique,"Prestations");
+evol=create_VolsE();
+gtk_widget_show(evol);
+gtk_widget_hide(pres);
+}
+
+
+void
+on_buttonELocation_clicked             (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *eloc ,*pres;
+
+pres=lookup_widget(objet_graphique,"Prestations");
+eloc=create_LocationE();
+gtk_widget_show(eloc);
+gtk_widget_hide(pres);
+}
+
+
+void
+on_buttonEHyber_clicked                (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *ehyber ,*pres;
+
+pres=lookup_widget(objet_graphique,"Prestations");
+ehyber=create_HybergementE();
+gtk_widget_show(ehyber);
+gtk_widget_hide(pres);
+
+}
+
+
+void
+on_buttonretourVP_clicked              (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *evol ,*pres;
+
+evol=lookup_widget(objet_graphique,"VolsE");
+pres=create_Prestations();
+gtk_widget_show(pres);
+gtk_widget_hide(evol);
+
+}
+
+
+void
+on_buttonretourHP_clicked              (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *ehyber ,*pres;
+
+ehyber=lookup_widget(objet_graphique,"HybergementE");
+pres=create_Prestations();
+gtk_widget_show(pres);
+gtk_widget_hide(ehyber);
+
+}
+
+
+void
+on_buttonretourLP_clicked              (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *eloc ,*pres;
+
+eloc=lookup_widget(objet_graphique,"LocationE");
+pres=create_Prestations();
+gtk_widget_show(pres);
+gtk_widget_hide(eloc);
+
+}
+

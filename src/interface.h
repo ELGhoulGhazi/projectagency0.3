@@ -17,3 +17,6 @@ GtkWidget* create_Hybergement (void);
 GtkWidget* create_Location (void);
 GtkWidget* create_Inscription (void);
 GtkWidget* create_ajouteremp (void);
+GtkWidget* create_VolsE (void);
+GtkWidget* create_HybergementE (void);
+GtkWidget* create_LocationE (void);

@@ -123,3 +123,27 @@ on_buttonretourHC_clicked              (GtkWidget       *objet_graphique,
 void
 on_buttonretourLC_clicked              (GtkWidget       *objet_graphique,
                                         gpointer         user_data);
+
+void
+on_buttonEvols_clicked                 (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonELocation_clicked             (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonEHyber_clicked                (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonretourVP_clicked              (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonretourHP_clicked              (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonretourLP_clicked              (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
