@@ -113,5 +113,5 @@ on_buttonretourVC_clicked              (GtkWidget       *objet_graphique,
                                         gpointer         user_data);
 
 void
-on_buttonvalidervol_clicked            (GtkButton       *button,
+on_buttonvalidervol_clicked            (GtkWidget       *objet_graphique,
                                         gpointer         user_data);

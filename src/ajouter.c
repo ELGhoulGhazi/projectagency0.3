@@ -12,9 +12,9 @@ enum
 {
 NOM ,
 PRENOM,
-JOUR, 
-MOIS,
-ANNEE, 
+DATEDERECRUTEMENT,
+USER, 
+PASSWORD, 
 COLUMNS,
 CIN 
 }; 
@@ -64,10 +64,9 @@ GtkListStore *store ;
 
 char nom[30] ;
 char prenom[30] ;
-char j[30];
-char m[30];
-char y[30];  
-
+char user[30];
+char password[30];  
+char date[30]; 
 store=NULL ; 
 FILE* f ; 
 
@@ -75,24 +74,24 @@ store=gtk_tree_view_get_model(liste) ;
 if (store==NULL) 
 {
 render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("NOM",render,"text",NOM,NULL) ; 
+column =gtk_tree_view_column_new_with_attributes("nom",render,"text",NOM,NULL) ; 
 gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
 
 
 render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("PRENOM",render,"text",PRENOM,NULL) ; 
+column =gtk_tree_view_column_new_with_attributes("prenom",render,"text",PRENOM,NULL) ; 
 gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
 
 render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("JOUR",render,"text",JOUR,NULL) ; 
+column =gtk_tree_view_column_new_with_attributes("date",render,"text",DATEDERECRUTEMENT,NULL) ; 
 gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
 
 render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("MOIS",render,"text",MOIS,NULL) ; 
+column =gtk_tree_view_column_new_with_attributes("user",render,"text",USER,NULL) ; 
 gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
 
 render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("ANNEE",render,"text",ANNEE,NULL) ; 
+column =gtk_tree_view_column_new_with_attributes("password",render,"text",PASSWORD,NULL) ; 
 gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
 
 
@@ -106,10 +105,10 @@ return ;
 else 
 {
 f=fopen("/home/ggmghoul/Desktop/agency-master/src/empinfo.txt","a+") ;
- while(fscanf(f," %s %s %s %s %s \n" ,nom,prenom,j,m,y)!=EOF) 
+ while(fscanf(f," %s %s %s %s %s \n" ,nom,prenom,date,user,password)!=EOF) 
 {
 gtk_list_store_append (store,&iter) ; 
-gtk_list_store_set (store,&iter,nom,NOM,prenom,PRENOM,j,JOUR,m,MOIS,y,ANNEE,-1) ; 
+gtk_list_store_set (store,&iter,NOM,nom,PRENOM,prenom,DATEDERECRUTEMENT,date,USER,user,PASSWORD,password,-1) ; 
 }
 fclose(f) ; 
 gtk_tree_view_set_model(GTK_TREE_VIEW (liste),GTK_TREE_MODEL (store)); 
@@ -119,7 +118,7 @@ g_object_unref (store) ;
 }
 
 
-
+/*
 void afficherclient (GtkTreeView *liste)
 {
 GtkCellRenderer *render ;
@@ -176,7 +175,7 @@ g_object_unref (store) ;
 }
 
 
-/*
+
 void supprimeremployer(char nom[], char prenom[] ,int j ,int m,int y ,char user[] ,char password[])
 {
 

@@ -482,7 +482,7 @@ gtk_widget_hide(vol);
 }
 
 void
-on_buttonvalidervol_clicked            (GtkButton       *button,
+on_buttonvalidervol_clicked            (GtkWidget       *objet_graphique,
                                         gpointer         user_data)
 {
 
