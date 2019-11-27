@@ -147,3 +147,51 @@ on_buttonretourHP_clicked              (GtkWidget       *objet_graphique,
 void
 on_buttonretourLP_clicked              (GtkWidget       *objet_graphique,
                                         gpointer         user_data);
+
+void
+on_buttonmsgA_clicked                  (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonrecA_clicked                  (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonmsgE_clicked                  (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonrecE_clicked                  (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonrecC_clicked                  (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonmsgC_clicked                  (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonretourmsg_clicked             (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonretourrec_clicked             (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonretourCC_clicked              (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonretourRC_clicked              (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonretourME_clicked              (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonretourRE_clicked              (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);

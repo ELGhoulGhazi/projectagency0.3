@@ -620,3 +620,161 @@ gtk_widget_hide(eloc);
 
 }
 
+
+void
+on_buttonmsgA_clicked                  (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *message ,*admin;
+
+admin=lookup_widget(objet_graphique,"ModeAdmin");
+message=create_message();
+gtk_widget_show(message);
+gtk_widget_hide(admin);
+}
+
+
+void
+on_buttonrecA_clicked                  (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *rec ,*admin;
+
+admin=lookup_widget(objet_graphique,"ModeAdmin");
+rec=create_reclamation();
+gtk_widget_show(rec);
+gtk_widget_hide(admin);
+}
+
+
+void
+on_buttonmsgE_clicked                  (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *message ,*emp;
+
+emp=lookup_widget(objet_graphique,"ModeEmploye");
+message=create_messageE();
+gtk_widget_show(message);
+gtk_widget_hide(emp);
+}
+
+
+void
+on_buttonrecE_clicked                  (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *rec ,*emp;
+
+emp=lookup_widget(objet_graphique,"ModeEmploye");
+rec=create_reclamationE();
+gtk_widget_show(rec);
+gtk_widget_hide(emp);
+}
+
+
+void
+on_buttonrecC_clicked                  (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *rec ,*client;
+
+client=lookup_widget(objet_graphique,"ModeClient");
+rec=create_reclamer();
+gtk_widget_show(rec);
+gtk_widget_hide(client);
+}
+
+
+void
+on_buttonmsgC_clicked                  (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *contact ,*client;
+
+client=lookup_widget(objet_graphique,"ModeClient");
+contact=create_contacter();
+gtk_widget_show(contact);
+gtk_widget_hide(client);
+}
+
+
+void
+on_buttonretourmsg_clicked             (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *message ,*admin;
+
+message=lookup_widget(objet_graphique,"message");
+admin=create_ModeAdmin();
+gtk_widget_show(admin);
+gtk_widget_hide(message);
+}
+
+
+void
+on_buttonretourrec_clicked             (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *rec ,*admin;
+
+rec=lookup_widget(objet_graphique,"reclamation");
+admin=create_ModeAdmin();
+gtk_widget_show(admin);
+gtk_widget_hide(rec);
+
+}
+
+
+void
+on_buttonretourCC_clicked              (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *contact ,*client;
+
+contact=lookup_widget(objet_graphique,"contacter");
+client=create_ModeClient();
+gtk_widget_show(client);
+gtk_widget_hide(contact);
+}
+
+
+void
+on_buttonretourRC_clicked              (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *rec ,*client;
+
+rec=lookup_widget(objet_graphique,"reclamer");
+client=create_ModeClient();
+gtk_widget_show(client);
+gtk_widget_hide(rec);
+
+}
+
+
+void
+on_buttonretourME_clicked              (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *message ,*emp;
+
+message=lookup_widget(objet_graphique,"messageE");
+emp=create_ModeEmploye();
+gtk_widget_show(emp);
+gtk_widget_hide(message);
+}
+
+
+void
+on_buttonretourRE_clicked              (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *rec ,*emp;
+
+rec=lookup_widget(objet_graphique,"reclamationE");
+emp=create_ModeEmploye();
+gtk_widget_show(emp);
+gtk_widget_hide(rec);
+}
+
