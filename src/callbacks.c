@@ -73,8 +73,8 @@ GClients=create_GestionAClient();
 gtk_widget_show(GClients);
 gtk_widget_hide(Admin);
 
-treeview=lookup_widget(GClients,"treeviewclient");
-afficheremp(treeview) ; 
+//treeview=lookup_widget(GClients,"treeviewclient");
+//afficherclient(treeview) ; 
 
 }
 
@@ -206,6 +206,8 @@ GestionClient=lookup_widget(objet_graphique,"GestionAClient");
 Admin=create_ModeAdmin();
 gtk_widget_show(Admin);
 gtk_widget_hide(GestionClient);
+
+
 }
 
 
@@ -387,12 +389,18 @@ void
 on_buttonretourajoutadmin_clicked      (GtkWidget       *objet_graphique,
                                         gpointer         user_data)
 {
-GtkWidget *ajoutemp ,*Gemp;
+GtkWidget *ajoutemp ,*Gemp,*treeview;
 
 ajoutemp=lookup_widget(objet_graphique,"ajouteremp");
 Gemp=create_GestionAEmployes();
 gtk_widget_show(Gemp);
 gtk_widget_hide(ajoutemp);
+
+
+treeview=lookup_widget(Gemp,"treeviewemp");
+afficheremp(treeview) ; 
+
+
 }
 
 
@@ -410,7 +418,7 @@ char user[30] ;
 char password[30] ;
 int j=0,m=0,y=0 ; 
 
-GtkWidget *inputuser,*inputpass ,*inputnom ,*inputprenom ,*inputj,*inputm,*inputy ;  
+GtkWidget *inputuser,*inputpass ,*inputnom ,*inputprenom ,*inputj,*inputm,*inputy ,*treeview ;  
 
 
 inputnom=lookup_widget(objet_graphique,"entrynomemp"); 
@@ -438,6 +446,9 @@ ajouteremployer(nom,prenom,j,m,y,user,password);
 Gemp=create_GestionAEmployes();
 gtk_widget_show(Gemp);
 gtk_widget_hide(ajoutemp);
+
+treeview=lookup_widget(Gemp,"treeviewemp");
+afficheremp(treeview) ; 
 }
 
 

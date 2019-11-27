@@ -32,7 +32,7 @@ fclose(f);
 }
 f=fopen("/home/ggmghoul/Desktop/agency-master/src/client.txt","a");
 if(f!=NULL)
-{fprintf(f,"%s %s %s \n",nom,prenom,CIN);
+{fprintf(f,"%s %s %s %s %s \n",nom,prenom,CIN,user,password);
 fclose(f);
 }
 }
@@ -129,7 +129,9 @@ GtkListStore *store ;
 
 char nom[30] ;
 char prenom[30] ;
-char cin[30];   
+char cin[30]; 
+char user[30]; 
+char password[30];   
 
 store=NULL ; 
 FILE* f ; 
@@ -138,21 +140,28 @@ store=gtk_tree_view_get_model(liste) ;
 if (store==NULL) 
 {
 render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("NOM",render,"text",NOM,NULL) ; 
+column =gtk_tree_view_column_new_with_attributes("nom",render,"text",NOM,NULL) ; 
 gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
 
 
 render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("PRENOM",render,"text",PRENOM,NULL) ; 
+column =gtk_tree_view_column_new_with_attributes("prenom",render,"text",PRENOM,NULL) ; 
 gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
 
 
 render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("CIN",render,"text",CIN,NULL) ; 
+column =gtk_tree_view_column_new_with_attributes("cin",render,"text",CIN,NULL) ; 
 gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
 
+render=gtk_cell_renderer_text_new () ; 
+column =gtk_tree_view_column_new_with_attributes("user",render,"text",USER,NULL) ; 
+gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
 
-store=gtk_list_store_new(COLUMNS,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING) ; 
+render=gtk_cell_renderer_text_new () ; 
+column =gtk_tree_view_column_new_with_attributes("password",render,"text",PASSWORD,NULL) ; 
+gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
+
+store=gtk_list_store_new(COLUMNS,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING) ; 
 
 f=fopen("/home/ggmghoul/Desktop/agency-master/src/client.txt","r") ; 
 if (f==NULL) 
@@ -162,10 +171,10 @@ return ;
 else 
 {
 f=fopen("/home/ggmghoul/Desktop/agency-master/src/client.txt","a+") ;
- while(fscanf(f," %s %s %s \n" ,nom,prenom,cin)!=EOF) 
+ while(fscanf(f," %s %s %s %s %s \n" ,nom,prenom,cin,user,password)!=EOF) 
 {
 gtk_list_store_append (store,&iter) ; 
-gtk_list_store_set (store,&iter,nom,NOM,prenom,PRENOM,cin,CIN,-1) ; 
+gtk_list_store_set (store,&iter,NOM,nom,PRENOM,prenom,CIN,cin,USER,user,PASSWORD,password,-1) ; 
 }
 fclose(f) ; 
 gtk_tree_view_set_model(GTK_TREE_VIEW (liste),GTK_TREE_MODEL (store)); 
