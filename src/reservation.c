@@ -8,7 +8,7 @@
 #  include <config.h>
 #endif
 
-int verifierdest (char depart[] ,char destination[], char heurededepart[][30] ,char compagnie[][30],char datealler[][30], char dateretour[][30] ) 
+int verifierdest (char depart[] ,char destination[], char heurededepart[][30] ,char compagnie[][30],char datealler[][30], char dateretour[][30],char prix[] ) 
 {
 char depart1[30] ;
 char destination1[30] ;
@@ -16,6 +16,7 @@ char heurededepart1[30] ;
 char compagnie1[30] ;
 char datealler1[30] ;
 char dateretour1[30];
+char prix1[30] ;
 
 int a=1,b=1,c=0 ; 
 int i ;
@@ -24,7 +25,7 @@ FILE *f ;
 f=fopen("/home/ggmghoul/Desktop/agency-master/src/voldispo.txt","r");
 if(f!=NULL)
 {
-while(fscanf(f,"%s %s %s %s %s %s",depart1,destination1,heurededepart1,compagnie1,datealler1,dateretour1)!=EOF)
+while(fscanf(f,"%s %s %s %s %s %s %s \n",depart1,destination1,heurededepart1,compagnie1,datealler1,dateretour1,prix1)!=EOF)
 {
 a=strcmp(depart,depart1) ; 
   b=strcmp(destination,destination1) ;
@@ -45,7 +46,16 @@ return c ;
  
 }
 
+void ajoutervol (char depart[] ,char destination[], char heurededepart[] ,char compagnie[],char datealler[], char dateretour[],char prix[]) 
+{
+FILE *f;
 
+f=fopen("/home/ggmghoul/Desktop/agency-master/src/voldispo.txt","a");
+if(f!=NULL)
+{fprintf(f,"%s %s %s %s %s %s %s \n",depart,destination,heurededepart,compagnie,datealler,dateretour,prix);
+fclose(f);
+}
+}
 
 /*
 int departdestdispo (char depart[][30] ,char destination[][30]) 

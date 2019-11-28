@@ -981,6 +981,7 @@ char compagnie[30][30] ;
 char heure[30][30] ;
 char da[30][30] ;
 char dr[30][30] ; 
+char prix[30]; 
 int n,i; 
 comboboxdepart=lookup_widget(objet_graphique,"comboboxentrydepart");
 comboboxdestination=lookup_widget(objet_graphique,"comboboxentrydestination");
@@ -992,7 +993,7 @@ combodr=lookup_widget(objet_graphique,"comboboxdateR");
 strcpy(depart,gtk_combo_box_get_active_text(GTK_COMBO_BOX(comboboxdepart)));
 strcpy(destination,gtk_combo_box_get_active_text(GTK_COMBO_BOX(comboboxdestination)));
 
-n=verifierdest(depart,destination,heure,compagnie,da,dr);
+n=verifierdest(depart,destination,heure,compagnie,da,dr,prix);
  if (n!=0) 
   {
     for (i=0 ;i<n ;i++)
@@ -1008,9 +1009,62 @@ n=verifierdest(depart,destination,heure,compagnie,da,dr);
 
 
 void
-on_buttonajoutvol_clicked              (GtkButton       *button,
+on_buttonajoutvol_clicked              (GtkWidget       *objet_graphique,
                                         gpointer         user_data)
 {
+GtkWidget *vole ,*ajoutvol ;
+
+vole=lookup_widget(objet_graphique,"VolsE");
+ajoutvol=create_ajoutervol(); 
+gtk_widget_show(ajoutvol);
+gtk_widget_hide(vole);
+}
+
+
+void
+on_buttonvaliderajoutvol_clicked       (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *ajoutvol ,*vole;
+
+FILE *f;
+
+char depart[30] ;
+char destination[30];
+char heurededepart[30] ;
+char compagnie[30];
+char datealler[30];
+char dateretour[30];
+char prix[30];
+
+GtkWidget *inputdepart,*inputdesti ,*inputheure ,*inputddepart ,*inpudretour,*inputprix, *inputcomp ;  
+
+
+inputdepart=lookup_widget(objet_graphique,"entrydepart"); 
+inputdesti=lookup_widget(objet_graphique,"entrydesti");
+inputheure=lookup_widget(objet_graphique,"entryheure"); 
+inputcomp=lookup_widget(objet_graphique,"entrycomp"); 
+inputddepart=lookup_widget(objet_graphique,"entrydatealler"); 
+inpudretour=lookup_widget(objet_graphique,"entrydateretour");
+inputprix=lookup_widget(objet_graphique,"entryprix");
+
+ajoutvol=lookup_widget(objet_graphique,"ajoutervol");
+
+
+strcpy(depart,gtk_entry_get_text(GTK_ENTRY(inputdepart)));
+strcpy(destination,gtk_entry_get_text(GTK_ENTRY(inputdesti)));
+strcpy(heurededepart,gtk_entry_get_text(GTK_ENTRY(inputheure)));
+strcpy(compagnie,gtk_entry_get_text(GTK_ENTRY(inputcomp)));
+strcpy(datealler,gtk_entry_get_text(GTK_ENTRY(inputddepart)));
+strcpy(dateretour,gtk_entry_get_text(GTK_ENTRY(inpudretour)));
+strcpy(prix,gtk_entry_get_text(GTK_ENTRY(inputprix)));
+
+ajoutervol(depart,destination,heurededepart,compagnie,datealler,dateretour,prix);
+
+
+vole=create_VolsE();
+gtk_widget_show(vole);
+gtk_widget_hide(ajoutvol);
 
 }
 

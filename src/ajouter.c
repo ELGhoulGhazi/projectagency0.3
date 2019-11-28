@@ -189,6 +189,11 @@ g_object_unref (store) ;
 }
 }
 
+
+
+
+
+
 void affichervol (GtkTreeView *liste)
 {
 GtkCellRenderer *render ;
@@ -258,6 +263,9 @@ g_object_unref (store) ;
 }
 }
 }
+
+
+
 
 /*
 void afficherhyber (GtkTreeView *liste)

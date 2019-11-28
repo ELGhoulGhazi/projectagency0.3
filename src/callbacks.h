@@ -251,5 +251,9 @@ on_buttonrecherchevol_clicked          (GtkWidget       *objet_graphique,
 
 
 void
-on_buttonajoutvol_clicked              (GtkButton       *button,
+on_buttonajoutvol_clicked              (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonvaliderajoutvol_clicked       (GtkWidget       *objet_graphique,
                                         gpointer         user_data);
