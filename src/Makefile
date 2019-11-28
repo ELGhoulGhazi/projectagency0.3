@@ -101,7 +101,7 @@ am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am_agency_OBJECTS = main.$(OBJEXT) support.$(OBJEXT) \
 	interface.$(OBJEXT) callbacks.$(OBJEXT) verifier.$(OBJEXT) \
-	ajouter.$(OBJEXT)
+	ajouter.$(OBJEXT) reservation.$(OBJEXT)
 agency_OBJECTS = $(am_agency_OBJECTS)
 am__DEPENDENCIES_1 =
 agency_DEPENDENCIES = $(am__DEPENDENCIES_1)
@@ -122,7 +122,8 @@ depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__maybe_remake_depfiles = depfiles
 am__depfiles_remade = ./$(DEPDIR)/ajouter.Po ./$(DEPDIR)/callbacks.Po \
 	./$(DEPDIR)/interface.Po ./$(DEPDIR)/main.Po \
-	./$(DEPDIR)/support.Po ./$(DEPDIR)/verifier.Po
+	./$(DEPDIR)/reservation.Po ./$(DEPDIR)/support.Po \
+	./$(DEPDIR)/verifier.Po
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -287,7 +288,8 @@ agency_SOURCES = \
 	interface.c interface.h \
 	callbacks.c callbacks.h \
         verifier.c verifier.h \
-        ajouter.c ajouter.h 
+        ajouter.c ajouter.h \
+        reservation.c reservation.h
 
 agency_LDADD = -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lfontconfig -lfreetype $(INTLLIBS)
 all: all-am
@@ -380,6 +382,7 @@ include ./$(DEPDIR)/ajouter.Po # am--include-marker
 include ./$(DEPDIR)/callbacks.Po # am--include-marker
 include ./$(DEPDIR)/interface.Po # am--include-marker
 include ./$(DEPDIR)/main.Po # am--include-marker
+include ./$(DEPDIR)/reservation.Po # am--include-marker
 include ./$(DEPDIR)/support.Po # am--include-marker
 include ./$(DEPDIR)/verifier.Po # am--include-marker
 
@@ -534,6 +537,7 @@ distclean: distclean-am
 	-rm -f ./$(DEPDIR)/callbacks.Po
 	-rm -f ./$(DEPDIR)/interface.Po
 	-rm -f ./$(DEPDIR)/main.Po
+	-rm -f ./$(DEPDIR)/reservation.Po
 	-rm -f ./$(DEPDIR)/support.Po
 	-rm -f ./$(DEPDIR)/verifier.Po
 	-rm -f Makefile
@@ -585,6 +589,7 @@ maintainer-clean: maintainer-clean-am
 	-rm -f ./$(DEPDIR)/callbacks.Po
 	-rm -f ./$(DEPDIR)/interface.Po
 	-rm -f ./$(DEPDIR)/main.Po
+	-rm -f ./$(DEPDIR)/reservation.Po
 	-rm -f ./$(DEPDIR)/support.Po
 	-rm -f ./$(DEPDIR)/verifier.Po
 	-rm -f Makefile

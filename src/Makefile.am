@@ -13,7 +13,8 @@ agency_SOURCES = \
 	interface.c interface.h \
 	callbacks.c callbacks.h \
         verifier.c verifier.h \
-        ajouter.c ajouter.h 
+        ajouter.c ajouter.h \ 
+        reservation.c reservation.h
 
 agency_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
 

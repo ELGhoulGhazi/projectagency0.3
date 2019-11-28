@@ -9,11 +9,15 @@
 #include<string.h>
 #include<stdlib.h>
 
+#include <gtk/gtkclist.h>
+//#include <gtk/gdkkeysyms.h>
+
 #include "callbacks.h"
 #include "interface.h"
 #include "support.h"
 #include "verifier.h"
 #include "ajouter.h"
+#include "reservation.h"
 
 
  
@@ -459,12 +463,29 @@ void
 on_buttonCVols_clicked                 (GtkWidget       *objet_graphique,
                                         gpointer         user_data)
 {
-GtkWidget *vol ,*Client;
+int i ,n ; 
+char depart[30][30] ;
+char destination[30][30]; 
+
+
+GtkWidget *vol ,*Client; //, *comboboxdepart ,*comboboxdestination ;
 
 Client=lookup_widget(objet_graphique,"ModeClient");
 vol=create_Vols();
 gtk_widget_show(vol);
 gtk_widget_hide(Client);
+/*
+comboboxdepart=lookup_widget(objet_graphique,"comboboxentrydepart");
+comboboxdestination=lookup_widget(objet_graphique,"comboboxentrydestination");
+
+
+n=departdestdispo(depart,destination);  
+for(i=0 ;i<n ;i++) 
+{
+gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxdepart),depart[i]) ;
+gtk_combo_box_append_text (GTK_COMBO_BOX (comboboxdestination),destination[i]) ;
+}*/
+
 }
 
 
@@ -538,12 +559,18 @@ void
 on_buttonEvols_clicked                 (GtkWidget       *objet_graphique,
                                         gpointer         user_data)
 {
-GtkWidget *evol ,*pres;
+GtkWidget *evol ,*pres ,*treeview;
 
 pres=lookup_widget(objet_graphique,"Prestations");
 evol=create_VolsE();
 gtk_widget_show(evol);
 gtk_widget_hide(pres);
+
+treeview=lookup_widget(evol,"treeviewvol");
+affichervol(treeview) ; 
+
+
+
 }
 
 
@@ -937,6 +964,51 @@ gtk_widget_hide(hyberv);
 
 void
 on_buttonvalidervol_clicked            (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_buttonrecherchevol_clicked          (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *comboboxdepart ,*comboboxdestination ,*combocompagnie , *comboheure ,*comboda ,*combodr; 
+char depart[30] ;
+char destination[30] ;
+char compagnie[30][30] ;
+char heure[30][30] ;
+char da[30][30] ;
+char dr[30][30] ; 
+int n,i; 
+comboboxdepart=lookup_widget(objet_graphique,"comboboxentrydepart");
+comboboxdestination=lookup_widget(objet_graphique,"comboboxentrydestination");
+comboheure=lookup_widget(objet_graphique,"comboboxheuredepart");
+combocompagnie=lookup_widget(objet_graphique,"comboboxcompagnie");
+comboda=lookup_widget(objet_graphique,"comboboxdateA");
+combodr=lookup_widget(objet_graphique,"comboboxdateR");
+
+strcpy(depart,gtk_combo_box_get_active_text(GTK_COMBO_BOX(comboboxdepart)));
+strcpy(destination,gtk_combo_box_get_active_text(GTK_COMBO_BOX(comboboxdestination)));
+
+n=verifierdest(depart,destination,heure,compagnie,da,dr);
+ if (n!=0) 
+  {
+    for (i=0 ;i<n ;i++)
+       {
+         gtk_combo_box_append_text (GTK_COMBO_BOX (comboheure),(heure[i]));
+         gtk_combo_box_append_text (GTK_COMBO_BOX (combocompagnie),(compagnie[i]));
+         gtk_combo_box_append_text (GTK_COMBO_BOX (comboda),(da[i]));
+         gtk_combo_box_append_text (GTK_COMBO_BOX (combodr),(dr[i]));
+       }
+  }
+
+}
+
+
+void
+on_buttonajoutvol_clicked              (GtkButton       *button,
                                         gpointer         user_data)
 {
 

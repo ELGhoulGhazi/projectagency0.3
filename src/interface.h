@@ -29,3 +29,4 @@ GtkWidget* create_reclamationE (void);
 GtkWidget* create_Volsvisiteur (void);
 GtkWidget* create_Hybergementvisiteur (void);
 GtkWidget* create_Locationvisiteur (void);
+GtkWidget* create_ajoutervol (void);

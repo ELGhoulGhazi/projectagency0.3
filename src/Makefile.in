@@ -101,7 +101,7 @@ am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am_agency_OBJECTS = main.$(OBJEXT) support.$(OBJEXT) \
 	interface.$(OBJEXT) callbacks.$(OBJEXT) verifier.$(OBJEXT) \
-	ajouter.$(OBJEXT)
+	ajouter.$(OBJEXT) reservation.$(OBJEXT)
 agency_OBJECTS = $(am_agency_OBJECTS)
 am__DEPENDENCIES_1 =
 agency_DEPENDENCIES = $(am__DEPENDENCIES_1)
@@ -122,7 +122,8 @@ depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__maybe_remake_depfiles = depfiles
 am__depfiles_remade = ./$(DEPDIR)/ajouter.Po ./$(DEPDIR)/callbacks.Po \
 	./$(DEPDIR)/interface.Po ./$(DEPDIR)/main.Po \
-	./$(DEPDIR)/support.Po ./$(DEPDIR)/verifier.Po
+	./$(DEPDIR)/reservation.Po ./$(DEPDIR)/support.Po \
+	./$(DEPDIR)/verifier.Po
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -287,7 +288,8 @@ agency_SOURCES = \
 	interface.c interface.h \
 	callbacks.c callbacks.h \
         verifier.c verifier.h \
-        ajouter.c ajouter.h 
+        ajouter.c ajouter.h \
+        reservation.c reservation.h
 
 agency_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
 all: all-am
@@ -380,6 +382,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/callbacks.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/interface.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/reservation.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/support.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/verifier.Po@am__quote@ # am--include-marker
 
@@ -534,6 +537,7 @@ distclean: distclean-am
 	-rm -f ./$(DEPDIR)/callbacks.Po
 	-rm -f ./$(DEPDIR)/interface.Po
 	-rm -f ./$(DEPDIR)/main.Po
+	-rm -f ./$(DEPDIR)/reservation.Po
 	-rm -f ./$(DEPDIR)/support.Po
 	-rm -f ./$(DEPDIR)/verifier.Po
 	-rm -f Makefile
@@ -585,6 +589,7 @@ maintainer-clean: maintainer-clean-am
 	-rm -f ./$(DEPDIR)/callbacks.Po
 	-rm -f ./$(DEPDIR)/interface.Po
 	-rm -f ./$(DEPDIR)/main.Po
+	-rm -f ./$(DEPDIR)/reservation.Po
 	-rm -f ./$(DEPDIR)/support.Po
 	-rm -f ./$(DEPDIR)/verifier.Po
 	-rm -f Makefile
