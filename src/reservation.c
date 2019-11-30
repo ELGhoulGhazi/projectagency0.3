@@ -18,7 +18,9 @@ DATEALLER ,
 DATERETOUR ,
 PRIX ,
 PAYS ,
-HOTEL
+HOTEL, 
+MARQUE,
+COLUMNS
 
 }; 
 
@@ -86,7 +88,8 @@ char destination[30] ;
 char compagnie[30];
 char heure[30];
 char da[30];
-char dr[30] ; 
+char dr[30] ;
+char prix[50] ;  
 
 
 store=NULL ; 
@@ -121,7 +124,12 @@ render=gtk_cell_renderer_text_new () ;
 column =gtk_tree_view_column_new_with_attributes("Date de retour",render,"text",DATERETOUR,NULL) ; 
 gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
 
-store=gtk_list_store_new(COLUMNS,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING) ; 
+
+render=gtk_cell_renderer_text_new () ; 
+column =gtk_tree_view_column_new_with_attributes("Prix",render,"text",PRIX,NULL) ; 
+gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
+
+store=gtk_list_store_new(COLUMNS,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING) ; 
 
 f=fopen("/home/ggmghoul/Desktop/agency-master/src/voldispo.txt","r") ; 
 if (f==NULL) 
@@ -131,10 +139,10 @@ return ;
 else 
 {
 f=fopen("/home/ggmghoul/Desktop/agency-master/src/voldispo.txt","a+") ;
- while(fscanf(f," %s %s %s %s %s %s \n" ,depart,destination,heure,compagnie,da,dr)!=EOF) 
+ while(fscanf(f," %s %s %s %s %s %s %s \n" ,depart,destination,heure,compagnie,da,dr,prix)!=EOF) 
 {
 gtk_list_store_append (store,&iter) ; 
-gtk_list_store_set (store,&iter,DEPART,depart,DESTINATION,destination,HEUREDEDEPART,heure,COMPAGNIE,compagnie,DATEALLER,da,DATERETOUR,dr,-1) ; 
+gtk_list_store_set (store,&iter,DEPART,depart,DESTINATION,destination,HEUREDEDEPART,heure,COMPAGNIE,compagnie,DATEALLER,da,DATERETOUR,dr,PRIX,prix,-1) ; 
 }
 fclose(f) ; 
 gtk_tree_view_set_model(GTK_TREE_VIEW (liste),GTK_TREE_MODEL (store)); 
@@ -219,6 +227,60 @@ if(f!=NULL)
 fclose(f);
 }
 }
+/*
+void afficherlocation (GtkTreeView *liste)
+{
+GtkCellRenderer *render ;
+GtkTreeViewColumn *column ; 
+GtkTreeIter iter ; 
+
+GtkListStore *store ;
+
+loc l ; 
+
+
+store=NULL ; 
+FILE* f ; 
+
+store=gtk_tree_view_get_model(liste) ; 
+if (store==NULL) 
+{
+render=gtk_cell_renderer_text_new () ; 
+column =gtk_tree_view_column_new_with_attributes("Marque",render,"text",MARQUE,NULL) ; 
+gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
+
+
+render=gtk_cell_renderer_text_new () ; 
+column =gtk_tree_view_column_new_with_attributes("Prix",render,"text",PRIX,NULL) ; 
+gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
+
+
+
+
+
+store=gtk_list_store_new(COLUMNS,G_TYPE_STRING,G_TYPE_STRING) ; 
+
+f=fopen("/home/ggmghoul/Desktop/agency-master/src/locdispo.txt","r") ; 
+if (f==NULL) 
+{
+
+return ; 
+}
+else 
+{
+f=fopen("/home/ggmghoul/Desktop/agency-master/src/locdispo.txt","a+") ;
+ while(fscanf(f," %s %s \n" ,l.marque,l.prix)!=EOF) 
+{
+gtk_list_store_append (store,&iter) ; 
+gtk_list_store_set (store,&iter,MARQUE,l.marque,PRIX,l.prix,-1) ; 
+}
+fclose(f) ; 
+gtk_tree_view_set_model(GTK_TREE_VIEW (liste),GTK_TREE_MODEL (store)); 
+g_object_unref (store) ; 
+}
+}
+}*/
+
 /*
 int departdestdispo (char depart[][30] ,char destination[][30]) 
 {

@@ -569,12 +569,15 @@ void
 on_buttonELocation_clicked             (GtkWidget       *objet_graphique,
                                         gpointer         user_data)
 {
-GtkWidget *eloc ,*pres;
+GtkWidget *eloc ,*pres,*treeview;
 
 pres=lookup_widget(objet_graphique,"Prestations");
 eloc=create_LocationE();
 gtk_widget_show(eloc);
 gtk_widget_hide(pres);
+
+//treeview=lookup_widget(eloc,"treeviewlocation");
+//afficherlocation(treeview) ; 
 }
 
 
@@ -582,12 +585,15 @@ void
 on_buttonEHyber_clicked                (GtkWidget       *objet_graphique,
                                         gpointer         user_data)
 {
-GtkWidget *ehyber ,*pres;
+GtkWidget *ehyber , *pres, *treeview;
 
 pres=lookup_widget(objet_graphique,"Prestations");
 ehyber=create_HybergementE();
 gtk_widget_show(ehyber);
 gtk_widget_hide(pres);
+
+//treeview=lookup_widget(ehyber,"treeviewhyber");
+//afficherhybergement(treeview) ; 
 
 }
 
@@ -1065,12 +1071,15 @@ void
 on_buttonretourajoutvolgvol_clicked    (GtkWidget       *objet_graphique,
                                         gpointer         user_data)
 {
-GtkWidget *vole ,*ajoutvol ;
+GtkWidget *vole ,*ajoutvol,*treeview ;
 
 ajoutvol=lookup_widget(objet_graphique,"ajoutervol");
 vole=create_VolsE(); 
 gtk_widget_show(vole);
 gtk_widget_hide(ajoutvol);
+
+//treeview=lookup_widget(vole,"treeviewvol");
+//affichervol(treeview) ; 
 }
 
 
@@ -1108,12 +1117,15 @@ void
 on_buttonretourajouthyberhyber_clicked (GtkWidget       *objet_graphique,
                                         gpointer         user_data)
 {
-GtkWidget *hyber ,*ajouthyber ;
+GtkWidget *hyber ,*ajouthyber,*treeview ;
 
 ajouthyber=lookup_widget(objet_graphique,"ajouterhyber");
 hyber=create_HybergementE(); 
 gtk_widget_show(hyber);
 gtk_widget_hide(ajouthyber);
+
+//treeview=lookup_widget(hyber,"treeviewhyber");
+//afficherhybergement(treeview) ; 
 }
 
 
@@ -1155,12 +1167,16 @@ void
 on_buttonretourajoutlocloc_clicked     (GtkWidget       *objet_graphique,
                                         gpointer         user_data)
 {
-GtkWidget *loc ,*ajoutloc ;
+GtkWidget *loc ,*ajoutloc,*treeview ;
 
 ajoutloc=lookup_widget(objet_graphique,"ajouterloc");
 loc=create_LocationE(); 
 gtk_widget_show(loc);
 gtk_widget_hide(ajoutloc);
+
+//treeview=lookup_widget(loc,"treeviewlocation");
+//afficherlocation(treeview) ; 
+
 }
 
 

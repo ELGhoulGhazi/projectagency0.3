@@ -21,5 +21,7 @@ void ajouterhybergement(hyber h);
 void ajouterlocation(loc l);
 
 //void affichervol (GtkTreeView *liste);
+//void afficherhybergement (GtkTreeView *liste); 
+//void afficherlocation (GtkTreeView *liste); 
 
 //int departdestdispo (char depart[][30] ,char destination[][30]);
