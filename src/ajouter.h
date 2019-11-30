@@ -20,15 +20,17 @@ char user[50] ;
 char password[50];
 }emp ;
 
+
+
 void inscri (client c) ;
 
 
-void ajouteremployer (emp e); 
+void ajouteremployer (emp e);
+ 
 void afficheremp (GtkTreeView *liste) ; 
 void afficherclient (GtkTreeView *liste) ;
-void affichervol (GtkTreeView *liste);
-void afficherhyber (GtkTreeView *liste); 
-void afficherloc (GtkTreeView *liste);  
+
+
 //void supprimeremployer(); 
 //void modifieremployer (); 
 //void supprimerclient () ; 

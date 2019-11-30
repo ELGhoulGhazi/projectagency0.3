@@ -30,3 +30,5 @@ GtkWidget* create_Volsvisiteur (void);
 GtkWidget* create_Hybergementvisiteur (void);
 GtkWidget* create_Locationvisiteur (void);
 GtkWidget* create_ajoutervol (void);
+GtkWidget* create_ajouterhyber (void);
+GtkWidget* create_ajouterloc (void);

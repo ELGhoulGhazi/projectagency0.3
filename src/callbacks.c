@@ -557,8 +557,8 @@ evol=create_VolsE();
 gtk_widget_show(evol);
 gtk_widget_hide(pres);
 
-treeview=lookup_widget(evol,"treeviewvol");
-affichervol(treeview) ; 
+//treeview=lookup_widget(evol,"treeviewvol");
+//affichervol(treeview) ; 
 
 
 
@@ -1059,4 +1059,140 @@ gtk_widget_hide(ajoutvol);
 
 }
 
+
+
+void
+on_buttonretourajoutvolgvol_clicked    (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *vole ,*ajoutvol ;
+
+ajoutvol=lookup_widget(objet_graphique,"ajoutervol");
+vole=create_VolsE(); 
+gtk_widget_show(vole);
+gtk_widget_hide(ajoutvol);
+}
+
+
+void
+on_buttonajouthyber_clicked            (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *hyber ,*ajouthyber ;
+
+hyber=lookup_widget(objet_graphique,"HybergementE");
+ajouthyber=create_ajouterhyber(); 
+gtk_widget_show(ajouthyber);
+gtk_widget_hide(hyber);
+}
+
+
+
+
+void
+on_buttonajoutlocation_clicked         (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *loc ,*ajoutloc ;
+
+loc=lookup_widget(objet_graphique,"LocationE");
+ajoutloc=create_ajouterloc(); 
+gtk_widget_show(ajoutloc);
+gtk_widget_hide(loc);
+}
+
+
+
+
+void
+on_buttonretourajouthyberhyber_clicked (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *hyber ,*ajouthyber ;
+
+ajouthyber=lookup_widget(objet_graphique,"ajouterhyber");
+hyber=create_HybergementE(); 
+gtk_widget_show(hyber);
+gtk_widget_hide(ajouthyber);
+}
+
+
+void
+on_buttonvaliderhyber_clicked          (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *ajouthyber ,*hyberg;
+
+FILE *f;
+
+hyber h ;
+
+GtkWidget *inputpays,*inputhotel ,*inputprix ;  
+
+
+inputpays=lookup_widget(objet_graphique,"comboboxentrypayshyber"); 
+inputhotel=lookup_widget(objet_graphique,"entryajouthotel");
+inputprix=lookup_widget(objet_graphique,"entryajoutprixhyber"); 
+
+ajouthyber=lookup_widget(objet_graphique,"ajouterhyber");
+
+strcpy(h.pays,gtk_combo_box_get_active_text(GTK_COMBO_BOX(inputpays)));
+strcpy(h.hotel,gtk_entry_get_text(GTK_ENTRY(inputhotel)));
+strcpy(h.prix,gtk_entry_get_text(GTK_ENTRY(inputprix)));
+
+
+ajouterhybergement(h);
+
+
+hyberg=create_HybergementE();
+gtk_widget_show(hyberg);
+gtk_widget_hide(ajouthyber);
+
+}
+
+
+void
+on_buttonretourajoutlocloc_clicked     (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *loc ,*ajoutloc ;
+
+ajoutloc=lookup_widget(objet_graphique,"ajouterloc");
+loc=create_LocationE(); 
+gtk_widget_show(loc);
+gtk_widget_hide(ajoutloc);
+}
+
+
+void
+on_buttonvaliderlocajout_clicked       (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *ajoutloc ,*loca;
+
+FILE *f;
+
+loc l ; 
+
+GtkWidget *inputmarq,*inputprix ;  
+
+
+ 
+inputmarq=lookup_widget(objet_graphique,"entrymarque");
+inputprix=lookup_widget(objet_graphique,"entryprixloc"); 
+
+ajoutloc=lookup_widget(objet_graphique,"ajouterloc");
+
+strcpy(l.marque,gtk_entry_get_text(GTK_ENTRY(inputmarq)));
+strcpy(l.prix,gtk_entry_get_text(GTK_ENTRY(inputprix)));
+
+
+ajouterlocation(l);
+
+
+loca=create_LocationE();
+gtk_widget_show(loca);
+gtk_widget_hide(ajoutloc);
+
+}
 

@@ -257,3 +257,32 @@ on_buttonajoutvol_clicked              (GtkWidget       *objet_graphique,
 void
 on_buttonvaliderajoutvol_clicked       (GtkWidget       *objet_graphique,
                                         gpointer         user_data);
+
+void
+on_buttonretourajoutvolgvol_clicked    (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonajouthyber_clicked            (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonajoutlocation_clicked         (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+
+void
+on_buttonretourajouthyberhyber_clicked (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonvaliderhyber_clicked          (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonretourajoutlocloc_clicked     (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);
+
+void
+on_buttonvaliderlocajout_clicked       (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);

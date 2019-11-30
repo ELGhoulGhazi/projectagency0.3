@@ -16,13 +16,7 @@ DATEDERECRUTEMENT,
 USER, 
 PASSWORD, 
 COLUMNS,
-CIN , 
-DEPART , 
- DESTINATION , 
-COMPAGNIE , 
-HEUREDEDEPART , 
-DATEALLER ,
-DATERETOUR
+CIN 
 }; 
 
 
@@ -133,7 +127,7 @@ GtkTreeIter iter ;
 
 GtkListStore *store ;
 
-client c;
+client c ;
 
 store=NULL ; 
 FILE* f ; 
@@ -190,221 +184,12 @@ g_object_unref (store) ;
 
 
 
-void affichervol (GtkTreeView *liste)
-{
-GtkCellRenderer *render ;
-GtkTreeViewColumn *column ; 
-GtkTreeIter iter ; 
 
-GtkListStore *store ;
-
-char depart[30] ;
-char destination[30] ;
-char compagnie[30];
-char heure[30];
-char da[30];
-char dr[30] ; 
-
-
-store=NULL ; 
-FILE* f ; 
-
-store=gtk_tree_view_get_model(liste) ; 
-if (store==NULL) 
-{
-render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("Depart",render,"text",DEPART,NULL) ; 
-gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
-
-
-render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("Destination",render,"text",DESTINATION,NULL) ; 
-gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
-
-
-render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("Heure",render,"text",HEUREDEDEPART,NULL) ; 
-gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
-
-render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("Compagnie",render,"text",COMPAGNIE,NULL) ; 
-gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
-
-render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("Date d'aller",render,"text",DATEALLER,NULL) ; 
-gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
-
-render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("Date de retour",render,"text",DATERETOUR,NULL) ; 
-gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
-
-store=gtk_list_store_new(COLUMNS,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING) ; 
-
-f=fopen("/home/ggmghoul/Desktop/agency-master/src/voldispo.txt","r") ; 
-if (f==NULL) 
-{
-return ; 
-}
-else 
-{
-f=fopen("/home/ggmghoul/Desktop/agency-master/src/voldispo.txt","a+") ;
- while(fscanf(f," %s %s %s %s %s %s \n" ,depart,destination,heure,compagnie,da,dr)!=EOF) 
-{
-gtk_list_store_append (store,&iter) ; 
-gtk_list_store_set (store,&iter,DEPART,depart,DESTINATION,destination,HEUREDEDEPART,heure,COMPAGNIE,compagnie,DATEALLER,da,DATERETOUR,dr,-1) ; 
-}
-fclose(f) ; 
-gtk_tree_view_set_model(GTK_TREE_VIEW (liste),GTK_TREE_MODEL (store)); 
-g_object_unref (store) ; 
-}
-}
-}
 
 
 
 
 /*
-void afficherhyber (GtkTreeView *liste)
-{
-GtkCellRenderer *render ;
-GtkTreeViewColumn *column ; 
-GtkTreeIter iter ; 
-
-GtkListStore *store ;
-
-char depart[30] ;
-char destination[30] ;
-char compagnie[30];
-char heure[30];
-char da[30];
-char dr[30] ; 
-
-
-store=NULL ; 
-FILE* f ; 
-
-store=gtk_tree_view_get_model(liste) ; 
-if (store==NULL) 
-{
-render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("Depart",render,"text",DEPART,NULL) ; 
-gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
-
-
-render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("Destination",render,"text",DESTINATION,NULL) ; 
-gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
-
-
-render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("Heure",render,"text",HEUREDEDEPART,NULL) ; 
-gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
-
-render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("Compagnie",render,"text",COMPAGNIE,NULL) ; 
-gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
-
-render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("Date d'aller",render,"text",DATEALLER,NULL) ; 
-gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
-
-render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("Date de retour",render,"text",DATERETOUR,NULL) ; 
-gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
-
-store=gtk_list_store_new(COLUMNS,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING) ; 
-
-f=fopen("/home/ggmghoul/Desktop/agency-master/src/voldispo.txt","r") ; 
-if (f==NULL) 
-{
-return ; 
-}
-else 
-{
-f=fopen("/home/ggmghoul/Desktop/agency-master/src/voldispo.txt","a+") ;
- while(fscanf(f," %s %s %s %s %s %s \n" ,depart,destination,heure,compagnie,da,dr)!=EOF) 
-{
-gtk_list_store_append (store,&iter) ; 
-gtk_list_store_set (store,&iter,DEPART,depart,DESTINATION,destination,HEUREDEDEPART,heure,COMPAGNIE,compagnie,DATEALLER,da,DATERETOUR,dr,-1) ; 
-}
-fclose(f) ; 
-gtk_tree_view_set_model(GTK_TREE_VIEW (liste),GTK_TREE_MODEL (store)); 
-g_object_unref (store) ; 
-}
-}
-}
-
-void afficherloc (GtkTreeView *liste)
-{
-GtkCellRenderer *render ;
-GtkTreeViewColumn *column ; 
-GtkTreeIter iter ; 
-
-GtkListStore *store ;
-
-char depart[30] ;
-char destination[30] ;
-char compagnie[30];
-char heure[30];
-char da[30];
-char dr[30] ; 
-
-
-store=NULL ; 
-FILE* f ; 
-
-store=gtk_tree_view_get_model(liste) ; 
-if (store==NULL) 
-{
-render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("Depart",render,"text",DEPART,NULL) ; 
-gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
-
-
-render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("Destination",render,"text",DESTINATION,NULL) ; 
-gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
-
-
-render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("Heure",render,"text",HEUREDEDEPART,NULL) ; 
-gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
-
-render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("Compagnie",render,"text",COMPAGNIE,NULL) ; 
-gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
-
-render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("Date d'aller",render,"text",DATEALLER,NULL) ; 
-gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
-
-render=gtk_cell_renderer_text_new () ; 
-column =gtk_tree_view_column_new_with_attributes("Date de retour",render,"text",DATERETOUR,NULL) ; 
-gtk_tree_view_append_column (GTK_TREE_VIEW(liste),column); 
-
-store=gtk_list_store_new(COLUMNS,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING,G_TYPE_STRING) ; 
-
-f=fopen("/home/ggmghoul/Desktop/agency-master/src/voldispo.txt","r") ; 
-if (f==NULL) 
-{
-return ; 
-}
-else 
-{
-f=fopen("/home/ggmghoul/Desktop/agency-master/src/voldispo.txt","a+") ;
- while(fscanf(f," %s %s %s %s %s %s \n" ,depart,destination,heure,compagnie,da,dr)!=EOF) 
-{
-gtk_list_store_append (store,&iter) ; 
-gtk_list_store_set (store,&iter,DEPART,depart,DESTINATION,destination,HEUREDEDEPART,heure,COMPAGNIE,compagnie,DATEALLER,da,DATERETOUR,dr,-1) ; 
-}
-fclose(f) ; 
-gtk_tree_view_set_model(GTK_TREE_VIEW (liste),GTK_TREE_MODEL (store)); 
-g_object_unref (store) ; 
-}
-}
-}
-
-
 void supprimeremployer(char nom[], char prenom[] ,int j ,int m,int y ,char user[] ,char password[])
 {
 
