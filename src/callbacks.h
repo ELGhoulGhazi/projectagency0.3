@@ -286,3 +286,7 @@ on_buttonretourajoutlocloc_clicked     (GtkWidget       *objet_graphique,
 void
 on_buttonvaliderlocajout_clicked       (GtkWidget       *objet_graphique,
                                         gpointer         user_data);
+
+void
+on_buttonrecherchepays_clicked         (GtkWidget       *objet_graphique,
+                                        gpointer         user_data);

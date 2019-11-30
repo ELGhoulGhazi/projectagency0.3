@@ -10,6 +10,13 @@ char prix[50];
 
 typedef struct 
 {
+char pays[50]; 
+char hotel[50][50]; 
+char prix[50]; 
+}hyberg; 
+
+typedef struct 
+{
 char marque[50]; 
 char prix[50];  
 }loc; 
@@ -19,6 +26,7 @@ int verifierdest (char depart[] ,char destination[], char heurededepart[50][50] 
 void ajoutervol (char depart[] ,char destination[], char heurededepart[] ,char compagnie[],char datealler[], char dateretour[],char prix[]) ; 
 void ajouterhybergement(hyber h); 
 void ajouterlocation(loc l);
+int verifierpays (hyberg h) ; 
 
 //void affichervol (GtkTreeView *liste);
 //void afficherhybergement (GtkTreeView *liste); 

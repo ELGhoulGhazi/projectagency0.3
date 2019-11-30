@@ -1212,3 +1212,34 @@ gtk_widget_hide(ajoutloc);
 
 }
 
+
+void
+on_buttonrecherchepays_clicked         (GtkWidget       *objet_graphique,
+                                        gpointer         user_data)
+{
+GtkWidget *inputpays , *boxhotel ; 
+
+hyberg h ; 
+
+int n,i; 
+inputpays=lookup_widget(objet_graphique,"comboboxentryHyberpays");
+boxhotel=lookup_widget(objet_graphique,"comboboxhotel");
+
+
+strcpy(h.pays,gtk_combo_box_get_active_text(GTK_COMBO_BOX(inputpays)));
+
+
+n=verifierpays(h);
+ if (n!=0) 
+  {
+    for (i=0 ;i<n ;i++)
+       {
+         gtk_combo_box_append_text (GTK_COMBO_BOX (boxhotel),_(h.hotel[i]));
+         
+       }
+  }
+
+}
+
+
+

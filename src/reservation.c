@@ -63,6 +63,38 @@ return c ;
  
 }
 
+
+int verifierpays (hyberg h) 
+{
+char pays1[50] ;
+char hotel1[50]; 
+char prix1[50];  
+
+int a=1,c=0 ; 
+int i ;
+
+FILE *f ; 
+f=fopen("/home/ggmghoul/Desktop/agency-master/src/hyberdispo.txt","r");
+if(f!=NULL)
+{
+while(fscanf(f,"%s %s %s \n",pays1,hotel1,prix1)!=EOF)
+{
+a=strcmp(h.pays,pays1) ; 
+  
+
+if (a==0) 
+{
+strcpy(h.hotel[i],hotel1) ;
+c++ ;
+} 
+}
+}
+fclose(f); 
+return c ; 
+
+ 
+}
+
 void ajoutervol (char depart[] ,char destination[], char heurededepart[] ,char compagnie[],char datealler[], char dateretour[],char prix[]) 
 {
 FILE *f;
