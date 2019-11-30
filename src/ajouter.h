@@ -1,10 +1,29 @@
 #include <gtk/gtk.h>
 
+typedef struct
+{
+char nom[50]; 
+char prenom[50] ;
+char CIN[50] ;
+char user[50] ;
+char password[50];
+}client; 
 
-void inscri (char nom[], char prenom[] ,char CIN[] ,char user[] ,char password[]) ;
+typedef struct 
+{
+char nom[50] ;
+char prenom[50] ;
+int j ;
+int m;
+int y ;
+char user[50] ;
+char password[50];
+}emp ;
+
+void inscri (client c) ;
 
 
-void ajouteremployer (char nom[], char prenom[] ,int j ,int m,int y ,char user[] ,char password[]); 
+void ajouteremployer (emp e); 
 void afficheremp (GtkTreeView *liste) ; 
 void afficherclient (GtkTreeView *liste) ;
 void affichervol (GtkTreeView *liste);

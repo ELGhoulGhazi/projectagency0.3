@@ -4,7 +4,8 @@
 
 #include"verifier.h"
 
-int verifier(char user[],char password[])
+
+int verifier(cverif v)
 {
 FILE *f;
 int role,a=1,b=1,c=-1 ; 
@@ -15,8 +16,8 @@ if (f!=NULL)
 {
 while(fscanf(f,"%s %s %d",user1, password1,&role)!=EOF)
 {
-a=strcmp(user,user1);
-   b=strcmp(password,password1);
+a=strcmp(v.user,user1);
+   b=strcmp(v.password,password1);
 if (a==0 && b==0)
      c =role;
 }

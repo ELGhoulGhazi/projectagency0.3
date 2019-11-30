@@ -106,9 +106,8 @@ on_ggbuttonLogin_clicked               (GtkWidget       *objet_graphique,
 {
 FILE *f;
 int role;
-char user[100];
-char password[100];
 int c ; 
+cverif v ; 
 
 GtkWidget *Home ,*Admin ,*Employe ,*Client ; 
 
@@ -118,10 +117,10 @@ input=lookup_widget(objet_graphique,"ggenetryUser");
 input1=lookup_widget(objet_graphique,"ggentryPass");
 Home=lookup_widget(objet_graphique,"Home");
 
-strcpy(user,gtk_entry_get_text(GTK_ENTRY(input)));
-strcpy(password,gtk_entry_get_text(GTK_ENTRY(input1)));
+strcpy(v.user,gtk_entry_get_text(GTK_ENTRY(input)));
+strcpy(v.password,gtk_entry_get_text(GTK_ENTRY(input1)));
 output=lookup_widget(objet_graphique,"labelwrong");
-c=verifier(user,password);
+c=verifier(v);
 
 if (c==1)
 {Admin=create_ModeAdmin();
@@ -237,11 +236,7 @@ GtkWidget *Home ,*inscription ;
 
 FILE *f;
 
-char user[20];
-char password[20];
-char nom[50];
-char prenom[50];  
-char CIN[20] ;
+client c ; 
 
 GtkWidget *inputuser,*inputpass ,*inputnom ,*inputprenom ,*inputcin ;  
 
@@ -253,13 +248,13 @@ inputuser=lookup_widget(objet_graphique,"entryinscriptionuser");
 inputpass=lookup_widget(objet_graphique,"entryinscriptionpass");
 inscription=lookup_widget(objet_graphique,"Inscription");
 
-strcpy(nom,gtk_entry_get_text(GTK_ENTRY(inputnom)));
-strcpy(prenom,gtk_entry_get_text(GTK_ENTRY(inputprenom)));
-strcpy(CIN,gtk_entry_get_text(GTK_ENTRY(inputcin)));
-strcpy(user,gtk_entry_get_text(GTK_ENTRY(inputuser)));
-strcpy(password,gtk_entry_get_text(GTK_ENTRY(inputpass)));
+strcpy(c.nom,gtk_entry_get_text(GTK_ENTRY(inputnom)));
+strcpy(c.prenom,gtk_entry_get_text(GTK_ENTRY(inputprenom)));
+strcpy(c.CIN,gtk_entry_get_text(GTK_ENTRY(inputcin)));
+strcpy(c.user,gtk_entry_get_text(GTK_ENTRY(inputuser)));
+strcpy(c.password,gtk_entry_get_text(GTK_ENTRY(inputpass)));
 
-inscri(nom,prenom,CIN,user,password);
+inscri(c);
 inscription=lookup_widget(objet_graphique,"Inscription");
 Home=create_Home(); 
 gtk_widget_show(Home);
@@ -419,11 +414,7 @@ GtkWidget *ajoutemp ,*Gemp;
 
 FILE *f;
 
-char nom[30];
-char prenom[30] ;
-char user[30] ;
-char password[30] ;
-int j=0,m=0,y=0 ; 
+emp e ; 
 
 GtkWidget *inputuser,*inputpass ,*inputnom ,*inputprenom ,*inputj,*inputm,*inputy ,*treeview ;  
 
@@ -438,16 +429,16 @@ inputpass=lookup_widget(objet_graphique,"entrypassemp");
 ajoutemp=lookup_widget(objet_graphique,"ajouteremp");
 
 
-strcpy(nom,gtk_entry_get_text(GTK_ENTRY(inputnom)));
-strcpy(prenom,gtk_entry_get_text(GTK_ENTRY(inputprenom)));
-j=gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(inputj));
-m=gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(inputm));
-y=gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(inputy));
+strcpy(e.nom,gtk_entry_get_text(GTK_ENTRY(inputnom)));
+strcpy(e.prenom,gtk_entry_get_text(GTK_ENTRY(inputprenom)));
+e.j=gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(inputj));
+e.m=gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(inputm));
+e.y=gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(inputy));
 
-strcpy(user,gtk_entry_get_text(GTK_ENTRY(inputuser)));
-strcpy(password,gtk_entry_get_text(GTK_ENTRY(inputpass)));
+strcpy(e.user,gtk_entry_get_text(GTK_ENTRY(inputuser)));
+strcpy(e.password,gtk_entry_get_text(GTK_ENTRY(inputpass)));
 
-ajouteremployer(nom,prenom,j,m,y,user,password);
+ajouteremployer(e);
 
 
 Gemp=create_GestionAEmployes();

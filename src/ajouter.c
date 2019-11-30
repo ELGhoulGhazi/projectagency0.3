@@ -27,35 +27,35 @@ DATERETOUR
 
 
 
-void inscri (char nom[], char prenom[] ,char CIN[] ,char user[] ,char password[]) 
+void inscri (client c) 
 {
 FILE *f;
 int role=3 ;
 f=fopen("/home/ggmghoul/Desktop/agency-master/src/users.txt","a");
 if(f!=NULL)
-{fprintf(f,"%s %s %d \n",user,password,role);
+{fprintf(f,"%s %s %d \n",c.user,c.password,role);
 fclose(f);
 }
 f=fopen("/home/ggmghoul/Desktop/agency-master/src/client.txt","a");
 if(f!=NULL)
-{fprintf(f,"%s %s %s %s %s \n",nom,prenom,CIN,user,password);
+{fprintf(f,"%s %s %s %s %s \n",c.nom,c.prenom,c.CIN,c.user,c.password);
 fclose(f);
 }
 }
 
 
-void ajouteremployer (char nom[], char prenom[] ,int j ,int m,int y ,char user[] ,char password[])
+void ajouteremployer (emp e)
 {
 FILE *f;
 int role=2 ;
 f=fopen("/home/ggmghoul/Desktop/agency-master/src/users.txt","a");
 if(f!=NULL)
-{fprintf(f,"%s %s %d \n",user,password,role);
+{fprintf(f,"%s %s %d \n",e.user,e.password,role);
 fclose(f);
 }
 f=fopen("/home/ggmghoul/Desktop/agency-master/src/empinfo.txt","a");
 if(f!=NULL)
-{fprintf(f,"%s %s %d/%d/%d %s %s \n",nom,prenom,j,m,y,user,password);
+{fprintf(f,"%s %s %d/%d/%d %s %s \n",e.nom,e.prenom,e.j,e.m,e.y,e.user,e.password);
 fclose(f);
 }
 }
