@@ -38,7 +38,7 @@ fclose(f);
 }
 f=fopen("/home/ggmghoul/Desktop/agency-master/src/client.txt","a");
 if(f!=NULL)
-{fprintf(f,"%s %s %s %s %s \n",c.nom,c.prenom,c.CIN,c.user,c.password);
+{fprintf(f,"%s %s %s %s %s \n",c.nom,c.prenom,c.cin,c.user,c.password);
 fclose(f);
 }
 }
@@ -133,11 +133,7 @@ GtkTreeIter iter ;
 
 GtkListStore *store ;
 
-char nom[30] ;
-char prenom[30] ;
-char cin[30]; 
-char user[30]; 
-char password[30];   
+client c;
 
 store=NULL ; 
 FILE* f ; 
@@ -177,10 +173,10 @@ return ;
 else 
 {
 f=fopen("/home/ggmghoul/Desktop/agency-master/src/client.txt","a+") ;
- while(fscanf(f," %s %s %s %s %s \n" ,nom,prenom,cin,user,password)!=EOF) 
+ while(fscanf(f," %s %s %s %s %s \n" ,c.nom,c.prenom,c.cin,c.user,c.password)!=EOF) 
 {
 gtk_list_store_append (store,&iter) ; 
-gtk_list_store_set (store,&iter,NOM,nom,PRENOM,prenom,CIN,cin,USER,user,PASSWORD,password,-1) ; 
+gtk_list_store_set (store,&iter,NOM,c.nom,PRENOM,c.prenom,CIN,c.cin,USER,c.user,PASSWORD,c.password,-1) ; 
 }
 fclose(f) ; 
 gtk_tree_view_set_model(GTK_TREE_VIEW (liste),GTK_TREE_MODEL (store)); 

@@ -250,7 +250,7 @@ inscription=lookup_widget(objet_graphique,"Inscription");
 
 strcpy(c.nom,gtk_entry_get_text(GTK_ENTRY(inputnom)));
 strcpy(c.prenom,gtk_entry_get_text(GTK_ENTRY(inputprenom)));
-strcpy(c.CIN,gtk_entry_get_text(GTK_ENTRY(inputcin)));
+strcpy(c.cin,gtk_entry_get_text(GTK_ENTRY(inputcin)));
 strcpy(c.user,gtk_entry_get_text(GTK_ENTRY(inputuser)));
 strcpy(c.password,gtk_entry_get_text(GTK_ENTRY(inputpass)));
 

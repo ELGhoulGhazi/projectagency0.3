@@ -4,7 +4,7 @@ typedef struct
 {
 char nom[50]; 
 char prenom[50] ;
-char CIN[50] ;
+char cin[50] ;
 char user[50] ;
 char password[50];
 }client; 
