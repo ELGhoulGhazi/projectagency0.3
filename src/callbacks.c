@@ -977,10 +977,10 @@ on_buttonrecherchevol_clicked          (GtkWidget       *objet_graphique,
 GtkWidget *comboboxdepart ,*comboboxdestination ,*combocompagnie , *comboheure ,*comboda ,*combodr; 
 char depart[30] ;
 char destination[30] ;
-char compagnie[30][30] ;
-char heure[30][30] ;
-char da[30][30] ;
-char dr[30][30] ; 
+char compagnie[50][50] ;
+char heure[50][50] ;
+char da[50][50] ;
+char dr[50][50] ; 
 char prix[30]; 
 int n,i; 
 comboboxdepart=lookup_widget(objet_graphique,"comboboxentrydepart");
@@ -998,10 +998,10 @@ n=verifierdest(depart,destination,heure,compagnie,da,dr,prix);
   {
     for (i=0 ;i<n ;i++)
        {
-         gtk_combo_box_append_text (GTK_COMBO_BOX (comboheure),(heure[i]));
-         gtk_combo_box_append_text (GTK_COMBO_BOX (combocompagnie),(compagnie[i]));
-         gtk_combo_box_append_text (GTK_COMBO_BOX (comboda),(da[i]));
-         gtk_combo_box_append_text (GTK_COMBO_BOX (combodr),(dr[i]));
+         gtk_combo_box_append_text (GTK_COMBO_BOX (comboheure),_(heure[i]));
+         gtk_combo_box_append_text (GTK_COMBO_BOX (combocompagnie),_(compagnie[i]));
+         gtk_combo_box_append_text (GTK_COMBO_BOX (comboda),_(da[i]));
+         gtk_combo_box_append_text (GTK_COMBO_BOX (combodr),_(dr[i]));
        }
   }
 
@@ -1067,4 +1067,5 @@ gtk_widget_show(vole);
 gtk_widget_hide(ajoutvol);
 
 }
+
 

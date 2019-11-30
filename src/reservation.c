@@ -8,7 +8,7 @@
 #  include <config.h>
 #endif
 
-int verifierdest (char depart[] ,char destination[], char heurededepart[][30] ,char compagnie[][30],char datealler[][30], char dateretour[][30],char prix[] ) 
+int verifierdest (char depart[] ,char destination[], char heurededepart[50][50] ,char compagnie[50][50],char datealler[50][50], char dateretour[50][50],char prix[] ) 
 {
 char depart1[30] ;
 char destination1[30] ;
